@@ -1,6 +1,7 @@
 {
   "name": "iscb-app",
   "version": "1.0.0",
+  "main": "App.js",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -10,14 +11,14 @@
   "dependencies": {
     "@react-native-firebase/app": "^18.1.0",
     "@react-native-firebase/database": "^18.1.0",
-    "@react-native-masked-view/masked-view": "^0.2.9",
+    "@react-native-masked-view/masked-view": "0.2.8",
     "expo": "~48.0.18",
     "expo-dev-client": "~2.2.1",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "firebase": "^9.23.0",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-native": "0.71.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
