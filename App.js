@@ -7,6 +7,8 @@ import firebase from 'firebase/app';
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { registerRootComponent } from 'expo';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 import Home from './Screens/Home';
 import Test from './Screens/Test';
@@ -21,29 +23,12 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HeaderWithPL from './components/HeaderWithPL'
-// import NavBar from './components/NavBar'
-// import StockBox from './components/StockBox'
-import home from './assets/home.png'
-import user from './assets/user.png'
-import add from './assets/add.png'
-import favorites from './assets/favorites.png'
-// import profileImage from './assets/.png'
-// import marketImage from './assets/chart.png'
-import search from './assets/search.png'
 
 
 const app = initializeApp(firebaseConfig);
-
-// export default function App() {
-//   return(
-//       <Home/>
-//       // <View>hello</View>
-//   ) 
-// }
-
-
 const Tab = createBottomTabNavigator();
+
+
 
 class MyTabs extends React.Component {
 
@@ -59,8 +44,7 @@ class MyTabs extends React.Component {
 
   render = () =>{
       return (
-        <Tab.Navigator
-          initialRouteName="Home"
+        <Tab.Navigator initialRouteName="Home"
           screenOptions={{
             "tabBarActiveTintColor": "#fff",
             "tabBarInactiveTintColor": "lightgray",
@@ -73,215 +57,58 @@ class MyTabs extends React.Component {
               null
             ]
         }}>
-                <Tab.Screen
-                name="Home"
-                component={Home}
+              <Tab.Screen name="Home" component={Home}
+                options={{ tabBarIcon: ({ focused }) => {
+                    return (
+                      <View>
+                        <Ionicons name={'ios-home'} size={32} color="#ffffff" />
+                      </View>
+                    );
+                },}}
+              />
+              <Tab.Screen name="Promo" component={Promo}
+                options={{ tabBarIcon: ({ focused }) => {
+                    return (
+                      <View>
+                        <Ionicons name={'ios-book'} size={32} color="#ffffff" />
+                      </View>
+                    );
+                },}}
+              />
+              <Tab.Screen name="Test" component={Test}
+                options={{ tabBarIcon: ({ focused }) => {
+                    return (
+                      <View>
+                        <Ionicons name={'ios-add'} size={32} color="#ffffff" />
+                      </View>
+                    );
+                },}}
+              />
+              <Tab.Screen name="PromoTwo" component={PromoTwo}
                 options={{
                   tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <Image
-                          source={home}
-                          resizeMode="contain"
-                          style={{ width: 25 }}
-                        />
+                        <Ionicons name={'ios-search'} size={32} color="#ffffff" />
                       </View>
                     );
-                  },
-                }}
+                },}}
               />
-              <Tab.Screen
-            name="Promo"
-            component={Promo}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={add}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            />
-              <Tab.Screen
-              name="Test"
-              component={Test}
-              options={{
-                tabBarIcon: ({ focused }) => {
-                  return (
-                    <View>
-                      <Image
-                        source={favorites}
-                        resizeMode="contain"
-                        style={{ width: 25 }}
-                      />
-                    </View>
-                  );
-                },
-              }}
-            />
-            <Tab.Screen
-            name="PromoTwo"
-            component={PromoTwo}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={search}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            />
-            <Tab.Screen
-            name="Profile"
-            children={()=><Home onStatusChange={this.handleStatusChange}/>}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={user}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            
-            /> 
-    </Tab.Navigator>
-      );
-  }
-}
-
-class Mytabslogin extends React.Component {
-
-
-  constructor(props) {
-    super(props)
-    this.handleStatusChange=this.handleStatusChange.bind(this)
-  }
-
-  handleStatusChange = () =>{
-    this.props.onStatusChange()
-  }
-
-  render = () =>{
-      return (
-        <Tab.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            "tabBarActiveTintColor": "#fff",
-            "tabBarInactiveTintColor": "lightgray",
-            "tabBarActiveBackgroundColor": "black",
-            "tabBarInactiveBackgroundColor": "black",
-            "tabBarStyle": [
-              {
-                "display": "flex"
-              },
-              null
-            ]
-        }}>
-                <Tab.Screen
-                name="Home"
-                component={Home}
+              <Tab.Screen name="Profile" children={()=><Home onStatusChange={this.handleStatusChange}/>}
                 options={{
                   tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <Image
-                          source={home}
-                          resizeMode="contain"
-                          style={{ width: 25 }}
-                        />
+                        <MaterialCommunityIcons name="account-circle" size={32} color="#ffffff" />
                       </View>
                     );
-                  },
-                }}
-              />
-              <Tab.Screen
-            name="Promo"
-            component={Promo}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={add}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            />
-              <Tab.Screen
-              name="Test"
-              component={Test}
-              options={{
-                tabBarIcon: ({ focused }) => {
-                  return (
-                    <View>
-                      <Image
-                        source={favorites}
-                        resizeMode="contain"
-                        style={{ width: 25 }}
-                      />
-                    </View>
-                  );
-                },
-              }}
-            />
-            <Tab.Screen
-            name="PromoTwo"
-            component={PromoTwo}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={search}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            />
-            <Tab.Screen
-            name="Profile"
-            children={()=><Home onStatusChange={this.handleStatusChange}/>}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <View>
-                    <Image
-                      source={user}
-                      resizeMode="contain"
-                      style={{ width: 25 }}
-                    />
-                  </View>
-                );
-              },
-            }}
-            
-            /> 
-    </Tab.Navigator>
+                },}}
+              /> 
+        </Tab.Navigator>
       );
   }
 }
+
 
 class App extends Component {
   constructor(props) {

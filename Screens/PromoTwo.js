@@ -6,24 +6,25 @@ import { Ionicons } from '@expo/vector-icons';
 const PromoTwo = () => {
   // Define the clickable boxes data
   const boxesData = [
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#555555' },
-    { icon: 'ios-person', text: 'Speakers', color: '#CCCCCC' },
+    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-person', text: 'Speakers', color: '#333333' },
     { icon: 'ios-pin', text: 'Location', color: '#000000' },
+    
     
     // Add more boxes here as needed
   ];
