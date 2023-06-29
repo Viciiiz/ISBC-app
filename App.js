@@ -14,6 +14,7 @@ import Home from './Screens/Home';
 import Test from './Screens/Test';
 import Promo from './Screens/Promo';
 import PromoTwo from './Screens/PromoTwo';
+import Promotion from './Screens/Promotion';
 
 
 
@@ -57,7 +58,7 @@ class MyTabs extends React.Component {
               null
             ]
         }}>
-              <Tab.Screen name="Home" component={Home}
+              <Tab.Screen name="Home" component={Promotion}
                 options={{ tabBarIcon: ({ focused }) => {
                     return (
                       <View>
