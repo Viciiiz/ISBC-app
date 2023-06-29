@@ -9,6 +9,9 @@ import { initializeApp } from 'firebase/app';
 import { registerRootComponent } from 'expo';
 
 import Home from './Screens/Home';
+import Test from './Screens/Test';
+import Promo from './Screens/Promo';
+import PromoTwo from './Screens/PromoTwo';
 
 
 
@@ -88,8 +91,8 @@ class MyTabs extends React.Component {
                 }}
               />
               <Tab.Screen
-            name="Add"
-            component={Home}
+            name="Promo"
+            component={Promo}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -105,8 +108,8 @@ class MyTabs extends React.Component {
             }}
             />
               <Tab.Screen
-              name="Favorites"
-              component={Home}
+              name="Test"
+              component={Test}
               options={{
                 tabBarIcon: ({ focused }) => {
                   return (
@@ -122,8 +125,8 @@ class MyTabs extends React.Component {
               }}
             />
             <Tab.Screen
-            name="Search"
-            component={Home}
+            name="PromoTwo"
+            component={PromoTwo}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -207,8 +210,8 @@ class Mytabslogin extends React.Component {
                 }}
               />
               <Tab.Screen
-            name="Add"
-            component={Home}
+            name="Promo"
+            component={Promo}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -224,8 +227,8 @@ class Mytabslogin extends React.Component {
             }}
             />
               <Tab.Screen
-              name="Favorites"
-              component={Home}
+              name="Test"
+              component={Test}
               options={{
                 tabBarIcon: ({ focused }) => {
                   return (
@@ -241,8 +244,8 @@ class Mytabslogin extends React.Component {
               }}
             />
             <Tab.Screen
-            name="Search"
-            component={Home}
+            name="PromoTwo"
+            component={PromoTwo}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
