@@ -4,6 +4,8 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Dimensions
 import { Ionicons } from '@expo/vector-icons';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
+import Footer from '../components/Footer';
+
 const PromoTwo = () => {
   // Define the clickable boxes data
   const boxesData = [
@@ -70,11 +72,11 @@ const PromoTwo = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* <Image
+      <Image
         source={require('../assets/logo.png')}
         style={styles.logo}
         resizeMode="contain"
-      /> */}
+      />
       <Carousel
         data={bannerData}
         renderItem={renderBannerItem}
@@ -94,6 +96,7 @@ const PromoTwo = () => {
       <ScrollView style={styles.containerButtons}>
         {renderBoxes()}
       </ScrollView>
+      <Footer/>
     </ScrollView>
   );
 };
@@ -101,7 +104,7 @@ const PromoTwo = () => {
 // Styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#ffffff',
     // padding: 16,
   },
@@ -110,22 +113,23 @@ const styles = StyleSheet.create({
     // backgroundColor: '#ffffff',
     padding: 16,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 16,
-    marginBottom: 24,
-    textAlign: 'center',
-  },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     marginTop: 16,
+//     marginBottom: 24,
+//     textAlign: 'center',
+//   },
   boxesContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    alignItems: 'flex-start'
+    // justifyContent: 'space-between',
     // marginBottom: 16,
     // marginBottom: -8,
   },
   paginationContainer: {
-    paddingVertical: 10,
+    paddingVertical: 0,
     // paddingHorizontal: 5
   },
   paginationDot: {

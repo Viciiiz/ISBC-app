@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, Dimensions } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
+import Footer from '../components/Footer';
+
+
 const Promo = () => {
 
   const bannerData = [
@@ -23,96 +26,99 @@ const Promo = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <Carousel
-        data={bannerData}
-        renderItem={renderBannerItem}
-        sliderWidth={Dimensions.get('window').width}
-        itemWidth={Dimensions.get('window').width}
-        onSnapToItem={(index) => setActiveSlide(index)}
-      />
-      <Pagination
-        dotsLength={bannerData.length}
-        activeDotIndex={activeSlide}
-        containerStyle={styles.paginationContainer}
-        dotStyle={styles.paginationDot}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
-
-      {/* <ScrollView horizontal showsHorizontalScrollIndicator={true}>
-        <Image
-          source={require('../assets/banner.png')}
-          style={styles.bannerImage}
-          resizeMode="cover"
-        />
-        <Image
-          source={require('../assets/banner.png')}
-          style={styles.bannerImage}
-          resizeMode="cover"
-        />
-        <Image
-          source={require('../assets/banner.png')}
-          style={styles.bannerImage}
-          resizeMode="cover"
-        />
-      </ScrollView> */}
-
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>International Summer Bible Conference 2023</Text>
-        <Text style={styles.description}>
-          Join us for the International Summer Bible Conference 2023, where we will explore
-          the depths of the Scriptures and grow in our faith together. This conference
-          features renowned speakers, engaging workshops, and opportunities for fellowship
-          with believers from around the world.
-        </Text>
-
-        <Text style={styles.subTitle}>Highlights:</Text>
-        <View style={styles.highlightContainer}>
-          <Image
-            source={require('../assets/banner.png')}
-            style={styles.highlightIcon}
-            resizeMode="contain"
+    <ScrollView>
+        <ScrollView style={styles.container}>
+          <Carousel
+            data={bannerData}
+            renderItem={renderBannerItem}
+            sliderWidth={Dimensions.get('window').width}
+            itemWidth={Dimensions.get('window').width}
+            onSnapToItem={(index) => setActiveSlide(index)}
           />
-          <Text style={styles.highlightItem}>Inspirational Messages</Text>
-        </View>
-        <View style={styles.highlightContainer}>
-          <Image
-            source={require('../assets/banner.png')}
-            style={styles.highlightIcon}
-            resizeMode="contain"
+          <Pagination
+            dotsLength={bannerData.length}
+            activeDotIndex={activeSlide}
+            containerStyle={styles.paginationContainer}
+            dotStyle={styles.paginationDot}
+            inactiveDotOpacity={0.4}
+            inactiveDotScale={0.6}
           />
-          <Text style={styles.highlightItem}>Interactive Workshops</Text>
-        </View>
-        <View style={styles.highlightContainer}>
-          <Image
-            source={require('../assets/banner.png')}
-            style={styles.highlightIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.highlightItem}>Global Fellowship</Text>
-        </View>
-        <View style={styles.highlightContainer}>
-          <Image
-            source={require('../assets/banner.png')}
-            style={styles.highlightIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.highlightItem}>Worship and Praise</Text>
-        </View>
 
-        <Text style={styles.date}>July 15-18, 2023</Text>
-        <Text style={styles.location}>San Francisco, CA</Text>
-        <Text style={styles.registrationInfo}>
-          Register now to reserve your spot and be part of this life-changing event!
-        </Text>
+          {/* <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+            <Image
+              source={require('../assets/banner.png')}
+              style={styles.bannerImage}
+              resizeMode="cover"
+            />
+            <Image
+              source={require('../assets/banner.png')}
+              style={styles.bannerImage}
+              resizeMode="cover"
+            />
+            <Image
+              source={require('../assets/banner.png')}
+              style={styles.bannerImage}
+              resizeMode="cover"
+            />
+          </ScrollView> */}
 
-        <Image
-          source={require('../assets/banner.png')}
-          style={styles.registerButton}
-          resizeMode="contain"
-        />
-      </View>
+          <View style={styles.contentContainer}>
+            <Text style={styles.title}>International Summer Bible Conference 2023</Text>
+            <Text style={styles.description}>
+              Join us for the International Summer Bible Conference 2023, where we will explore
+              the depths of the Scriptures and grow in our faith together. This conference
+              features renowned speakers, engaging workshops, and opportunities for fellowship
+              with believers from around the world.
+            </Text>
+
+            <Text style={styles.subTitle}>Highlights:</Text>
+            <View style={styles.highlightContainer}>
+              <Image
+                source={require('../assets/banner.png')}
+                style={styles.highlightIcon}
+                resizeMode="contain"
+              />
+              <Text style={styles.highlightItem}>Inspirational Messages</Text>
+            </View>
+            <View style={styles.highlightContainer}>
+              <Image
+                source={require('../assets/banner.png')}
+                style={styles.highlightIcon}
+                resizeMode="contain"
+              />
+              <Text style={styles.highlightItem}>Interactive Workshops</Text>
+            </View>
+            <View style={styles.highlightContainer}>
+              <Image
+                source={require('../assets/banner.png')}
+                style={styles.highlightIcon}
+                resizeMode="contain"
+              />
+              <Text style={styles.highlightItem}>Global Fellowship</Text>
+            </View>
+            <View style={styles.highlightContainer}>
+              <Image
+                source={require('../assets/banner.png')}
+                style={styles.highlightIcon}
+                resizeMode="contain"
+              />
+              <Text style={styles.highlightItem}>Worship and Praise</Text>
+            </View>
+
+            <Text style={styles.date}>July 15-18, 2023</Text>
+            <Text style={styles.location}>San Francisco, CA</Text>
+            <Text style={styles.registrationInfo}>
+              Register now to reserve your spot and be part of this life-changing event!
+            </Text>
+
+            <Image
+              source={require('../assets/banner.png')}
+              style={styles.registerButton}
+              resizeMode="contain"
+            />
+          </View>
+        </ScrollView>
+        <Footer/>
     </ScrollView>
   );
 };
