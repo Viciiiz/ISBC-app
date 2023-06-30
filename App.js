@@ -55,9 +55,17 @@ class MyTabs extends React.Component {
             "tabBarInactiveTintColor": "lightgray",
             "tabBarActiveBackgroundColor": "black",
             "tabBarInactiveBackgroundColor": "black",
+            "style": {
+              paddingTop: 50, // Adjust the top padding here
+            },
+            tabStyle: {
+              paddingBottom: 10, // Adjust the bottom padding here (optional)
+            },
             "tabBarStyle": [
               {
-                "display": "flex"
+                "display": "flex",
+                height: 50,
+                paddingTop: -8,
               },
               null
             ],

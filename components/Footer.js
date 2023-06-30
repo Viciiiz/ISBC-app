@@ -9,63 +9,75 @@ const Footer = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Websites:</Text>
-      <View style={styles.linksContainer}>
-        <TouchableOpacity
-          style={styles.link}
-          onPress={() => handleLinkPress('https://isbc2023.ubf.org/')}
-        >
-          <Text style={styles.linkText}>isbc.ubf.org</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.link}
-          onPress={() => handleLinkPress('https://ubf.org/')}
-        >
-          <Text style={styles.linkText}>ubf.org</Text>
-        </TouchableOpacity>
+    <View>
+        <View style={styles.container}>
+            <Text style={styles.heading}>WEBSITES</Text>
+            <View style={styles.linksContainer}>
+                <TouchableOpacity
+                style={styles.link}
+                onPress={() => handleLinkPress('https://isbc2023.ubf.org/')}
+                >
+                <Text style={styles.linkText}>isbc.ubf.org</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                style={styles.link}
+                onPress={() => handleLinkPress('https://ubf.org/')}
+                >
+                <Text style={styles.linkText}>ubf.org</Text>
+                </TouchableOpacity>
 
-      </View>
+            </View>
 
-      <Text style={styles.heading}>Social Media:</Text>
-      <View style={styles.socialContainer}>
-        <TouchableOpacity
-          style={styles.socialLink}
-          onPress={() => handleLinkPress('https://www.facebook.com/')}
-        >
-          <FontAwesome name="facebook" size={24} color="#3b5998" />
-        </TouchableOpacity>
+            <Text style={styles.heading}>SOCIAL MEDIA</Text>
+            <View style={styles.socialContainer}>
+                <TouchableOpacity
+                style={styles.socialLink}
+                onPress={() => handleLinkPress('https://www.facebook.com/')}
+                >
+                <FontAwesome name="facebook" size={24} color="#3b5998" />
+                </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.socialLink}
-          onPress={() => handleLinkPress('https://www.twitter.com/')}
-        >
-          <AntDesign name="twitter" size={24} color="#00acee" />
-        </TouchableOpacity>
+                <TouchableOpacity
+                style={styles.socialLink}
+                onPress={() => handleLinkPress('https://www.twitter.com/')}
+                >
+                <AntDesign name="twitter" size={24} color="#00acee" />
+                </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.socialLink}
-          onPress={() => handleLinkPress('https://www.instagram.com/')}
-        >
-          <AntDesign name="instagram" size={24} color="#e4405f" />
-        </TouchableOpacity>
-      </View>
+                <TouchableOpacity
+                style={styles.socialLink}
+                onPress={() => handleLinkPress('https://www.instagram.com/')}
+                >
+                <AntDesign name="instagram" size={24} color="#e4405f" />
+                </TouchableOpacity>
 
-      <Text style={styles.footerText}>© 2023 University Bible Fellowship. All Rights Reserved.</Text>
+                <TouchableOpacity
+                style={styles.socialLink}
+                onPress={() => handleLinkPress('https://www.youtube.com/')}
+                >
+                <AntDesign name="youtube" size={24} color="#e4405f" />
+                </TouchableOpacity>
+            </View>
+        </View>
+        <View style={styles.footerTextContainer}>
+            <Text style={styles.footerText}>© 2023 University Bible Fellowship. All Rights Reserved.</Text>
+        </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f0f0f0',
-    paddingVertical: 10,
+    backgroundColor: '#e5e5e5',
+    // paddingVertical: 10,
+    paddingTop: 20,
     paddingHorizontal: 20
   },
   heading: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
+    marginTop: 10
   },
   linksContainer: {
     marginBottom: 10,
@@ -86,8 +98,9 @@ const styles = StyleSheet.create({
   },
   socialContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 10,
+    // justifyContent: 'center',
+    marginBottom: 30,
+    marginTop: 5
   },
   socialLink: {
     marginHorizontal: 10,
@@ -95,6 +108,13 @@ const styles = StyleSheet.create({
   footerText: {
     color: '#777',
     textAlign: 'center',
+    marginBottom: 20,
+    marginTop: 20
+  },
+  footerTextContainer: {
+    backgroundColor: '#d3d3d3',
+    flex: 1,
+    width: '100%',
   },
 });
 
