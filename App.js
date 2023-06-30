@@ -15,6 +15,7 @@ import Test from './Screens/Test';
 import Promo from './Screens/Promo';
 import Home from './Screens/Home';
 import Promotion from './Screens/Promotion';
+import HomeTwo from './Screens/HomeTwo';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -104,7 +105,7 @@ class MyTabs extends React.Component {
                     );
                 },}}
               />
-              <Tab.Screen name="Profile" children={()=><Home onStatusChange={this.handleStatusChange}/>}
+              <Tab.Screen name="Profile" children={()=><HomeTwo onStatusChange={this.handleStatusChange}/>}
                 options={{
                   tabBarIcon: ({ focused }) => {
                     return (
