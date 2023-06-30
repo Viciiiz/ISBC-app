@@ -55,26 +55,22 @@ class MyTabs extends React.Component {
             "tabBarInactiveTintColor": "lightgray",
             "tabBarActiveBackgroundColor": "black",
             "tabBarInactiveBackgroundColor": "black",
-            "style": {
-              paddingTop: 50, // Adjust the top padding here
-            },
-            tabStyle: {
-              paddingBottom: 10, // Adjust the bottom padding here (optional)
-            },
             "tabBarStyle": [
               {
                 "display": "flex",
                 height: 50,
-                paddingTop: -8,
+                // paddingTop: -8,
+                // alignItems: 'center'
               },
               null
             ],
             headerShown: false,
+            // tabBarLabel: '',
         }}>
               <Tab.Screen name="Home" component={Home} style={styles.container}
                 options={{ tabBarIcon: ({ focused }) => {
                     return (
-                      <View>
+                      <View style={styles.tabIconContainer}>
                         <Ionicons name={'ios-home'}  size={30} color="#ffffff" />
                       </View>
                     );
@@ -164,6 +160,10 @@ const styles = StyleSheet.create({
 	},
   icon: {
     paddingTop: 10
+  },
+  tabIconContainer: {
+    justifyContent: 'center', // Vertically center the icon
+    height: '100%', // Make the container take the full height of the tab bar
   },
     heading: {
 		//flex: 0,

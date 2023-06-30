@@ -11,7 +11,10 @@ const Footer = () => {
   return (
     <View>
         <View style={styles.container}>
-            <Text style={styles.heading}>WEBSITES</Text>
+            <View style={styles.headingContainer}>
+                <Text style={styles.heading}>WEBSITES</Text>
+            </View>
+            
             <View style={styles.linksContainer}>
                 <TouchableOpacity
                 style={styles.link}
@@ -28,34 +31,36 @@ const Footer = () => {
 
             </View>
 
-            <Text style={styles.heading}>SOCIAL MEDIA</Text>
+            {/* <View style={styles.headingContainer}>
+                <Text style={styles.heading}>SOCIAL MEDIA</Text>
+            </View> */}
             <View style={styles.socialContainer}>
                 <TouchableOpacity
                 style={styles.socialLink}
                 onPress={() => handleLinkPress('https://www.facebook.com/')}
                 >
-                <FontAwesome name="facebook" size={24} color="#3b5998" />
+                <FontAwesome name="facebook" size={26} color="#3b5998" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
                 onPress={() => handleLinkPress('https://www.twitter.com/')}
                 >
-                <AntDesign name="twitter" size={24} color="#00acee" />
+                <AntDesign name="twitter" size={26} color="#00acee" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
                 onPress={() => handleLinkPress('https://www.instagram.com/')}
                 >
-                <AntDesign name="instagram" size={24} color="#e4405f" />
+                <AntDesign name="instagram" size={26} color="#e4405f" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
                 onPress={() => handleLinkPress('https://www.youtube.com/')}
                 >
-                <AntDesign name="youtube" size={24} color="#e4405f" />
+                <AntDesign name="youtube" size={26} color="#e4405f" />
                 </TouchableOpacity>
             </View>
         </View>
@@ -74,42 +79,50 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   heading: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
-    marginTop: 10
+    marginBottom: 5,
+    marginTop: 10,
+  },
+  headingContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   linksContainer: {
     marginBottom: 10,
-    // flexDirection: 'row',
+    flexDirection: 'column',
     // flexWrap: 'wrap',
-    // justifyContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   link: {
-    marginBottom: 5,
+    margin: 0,
+    padding: 0
   },
   linkText: {
     color: '#000',
     // fontWeight: 'bold',
     // textDecorationLine: 'underline',
-    fontSize: 15,
+    fontSize: 18,
     paddingHorizontal: 5,
-    paddingVertical: 5
+    paddingVertical: 2
   },
   socialContainer: {
     flexDirection: 'row',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     marginBottom: 30,
     marginTop: 5
   },
   socialLink: {
     marginHorizontal: 10,
+    paddingTop: 10
   },
   footerText: {
     color: '#777',
     textAlign: 'center',
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
+    fontSize: 15
   },
   footerTextContainer: {
     backgroundColor: '#d3d3d3',
