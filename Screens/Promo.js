@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, Dimensions } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 import Footer from '../components/Footer';
@@ -7,12 +7,24 @@ import Footer from '../components/Footer';
 
 const Promo = () => {
 
+  useEffect(() => {
+    StatusBar.setHidden(true); // Hide the status bar when the page is mounted
+
+    return () => {
+      StatusBar.setHidden(false); // Show the status bar when the page is unmounted
+    };
+  }, []);
+
   const bannerData = [
     { image: require('../assets/banner.png') },
     { image: require('../assets/banner2.png') },
     { image: require('../assets/banner3.png') },
   ];
   const [activeSlide, setActiveSlide] = React.useState(0);
+
+  // const componentDidMount = () => {
+  //   StatusBar.setHidden(true); // Hide the status bar when the page is mounted
+  // }
 
   const renderBannerItem = ({ item }) => {
     return (
@@ -28,21 +40,24 @@ const Promo = () => {
   return (
     <ScrollView>
         <ScrollView style={styles.container}>
-          <Carousel
-            data={bannerData}
-            renderItem={renderBannerItem}
-            sliderWidth={Dimensions.get('window').width}
-            itemWidth={Dimensions.get('window').width}
-            onSnapToItem={(index) => setActiveSlide(index)}
-          />
-          <Pagination
-            dotsLength={bannerData.length}
-            activeDotIndex={activeSlide}
-            containerStyle={styles.paginationContainer}
-            dotStyle={styles.paginationDot}
-            inactiveDotOpacity={0.4}
-            inactiveDotScale={0.6}
-          />
+          <View style={styles.carouselContainer}>
+            <Carousel
+              data={bannerData}
+              renderItem={renderBannerItem}
+              sliderWidth={Dimensions.get('window').width}
+              itemWidth={Dimensions.get('window').width}
+              onSnapToItem={(index) => setActiveSlide(index)}
+              contentContainerStyle={styles.carouselContentContainer}
+            />
+            <Pagination
+              dotsLength={bannerData.length}
+              activeDotIndex={activeSlide}
+              containerStyle={styles.paginationContainer}
+              dotStyle={styles.paginationDot}
+              inactiveDotOpacity={0.4}
+              inactiveDotScale={0.6}
+            />
+          </View>
 
           {/* <ScrollView horizontal showsHorizontalScrollIndicator={true}>
             <Image
@@ -63,7 +78,7 @@ const Promo = () => {
           </ScrollView> */}
 
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>International Summer Bible Conference 2023</Text>
+            <Text style={styles.title}>Innternational Summer Bible Conference 2023</Text>
             <Text style={styles.description}>
               Join us for the International Summer Bible Conference 2023, where we will explore
               the depths of the Scriptures and grow in our faith together. This conference
@@ -127,13 +142,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    // paddingTop: StatusBar.currentHeight
     // width: '100%',
     // margin: 0
+  },
+  carouselContainer: {
+    marginTop: -StatusBar.currentHeight, // Remove the top padding
+  },
+  carouselContentContainer: {
+    paddingTop: StatusBar.currentHeight, // Adjust the top padding for the carousel content
   },
   bannerImage: {
     // width: '100%',
     // height: 200,
     // marginRight: 10,
+    // marginTop: 0,
+    // padding: 0,
+    marginTop: -1,
+    padding: 0,
     width: '100%',
     height: undefined,
     aspectRatio: 16 / 9,
@@ -143,7 +169,8 @@ const styles = StyleSheet.create({
     // paddingVertical: 10,
   },
   paginationContainer: {
-    paddingVertical: 10,
+    paddingTop: 0,
+    paddingBottom: 15
     // paddingHorizontal: 5
   },
   paginationDot: {

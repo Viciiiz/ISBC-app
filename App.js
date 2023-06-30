@@ -56,7 +56,8 @@ class MyTabs extends React.Component {
                 "display": "flex"
               },
               null
-            ]
+            ],
+            headerShown: false,
         }}>
               <Tab.Screen name="Home" component={Promotion}
                 options={{ tabBarIcon: ({ focused }) => {

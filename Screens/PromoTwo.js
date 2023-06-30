@@ -1,12 +1,22 @@
 // Import necessary dependencies
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Dimensions } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Dimensions, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 import Footer from '../components/Footer';
 
 const PromoTwo = () => {
+
+
+  useEffect(() => {
+    StatusBar.setHidden(true); // Hide the status bar when the page is mounted
+
+    return () => {
+        StatusBar.setHidden(false); // Show the status bar when the page is unmounted
+    };
+  }, []);
+
   // Define the clickable boxes data
   const boxesData = [
     { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
@@ -72,26 +82,29 @@ const PromoTwo = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <Image
+      {/* <Image
         source={require('../assets/logo.png')}
         style={styles.logo}
         resizeMode="contain"
-      />
-      <Carousel
-        data={bannerData}
-        renderItem={renderBannerItem}
-        sliderWidth={Dimensions.get('window').width}
-        itemWidth={Dimensions.get('window').width}
-        onSnapToItem={(index) => setActiveSlide(index)}
-      />
-      <Pagination
-        dotsLength={bannerData.length}
-        activeDotIndex={activeSlide}
-        containerStyle={styles.paginationContainer}
-        dotStyle={styles.paginationDot}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
+      /> */}
+      <View style={styles.carouselContainer}>
+            <Carousel
+              data={bannerData}
+              renderItem={renderBannerItem}
+              sliderWidth={Dimensions.get('window').width}
+              itemWidth={Dimensions.get('window').width}
+              onSnapToItem={(index) => setActiveSlide(index)}
+              contentContainerStyle={styles.carouselContentContainer}
+            />
+            <Pagination
+              dotsLength={bannerData.length}
+              activeDotIndex={activeSlide}
+              containerStyle={styles.paginationContainer}
+              dotStyle={styles.paginationDot}
+              inactiveDotOpacity={0.4}
+              inactiveDotScale={0.6}
+            />
+      </View>
       {/* <Text style={styles.title}>His Glory 2023</Text> */}
       <ScrollView style={styles.containerButtons}>
         {renderBoxes()}
@@ -107,6 +120,12 @@ const styles = StyleSheet.create({
     // flex: 1,
     backgroundColor: '#ffffff',
     // padding: 16,
+  },
+  carouselContainer: {
+    marginTop: -StatusBar.currentHeight, // Remove the top padding
+  },
+  carouselContentContainer: {
+    paddingTop: StatusBar.currentHeight, // Adjust the top padding for the carousel content
   },
   containerButtons: {
     // flex: 1,
@@ -143,6 +162,7 @@ const styles = StyleSheet.create({
     // width: '100%',
     // height: 200,
     // marginRight: 10,
+    // marginTop: 0,
     width: '100%',
     height: undefined,
     aspectRatio: 16 / 9,
@@ -166,7 +186,7 @@ const styles = StyleSheet.create({
   logo: {
     width: '100%',
     height: 100,
-    marginBottom: 10
+    marginBottom: 0
   },
 });
 
