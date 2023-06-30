@@ -10,11 +10,14 @@ import { registerRootComponent } from 'expo';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-import Home from './Screens/Home';
+import TestTwo from './Screens/TestTwo';
 import Test from './Screens/Test';
 import Promo from './Screens/Promo';
-import PromoTwo from './Screens/PromoTwo';
+import Home from './Screens/Home';
 import Promotion from './Screens/Promotion';
+
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 
@@ -46,6 +49,7 @@ class MyTabs extends React.Component {
   render = () =>{
       return (
         <Tab.Navigator initialRouteName="Home"
+          style={styles.container}
           screenOptions={{
             "tabBarActiveTintColor": "#fff",
             "tabBarInactiveTintColor": "lightgray",
@@ -59,11 +63,11 @@ class MyTabs extends React.Component {
             ],
             headerShown: false,
         }}>
-              <Tab.Screen name="Home" component={Promotion}
+              <Tab.Screen name="Home" component={Home} style={styles.container}
                 options={{ tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <Ionicons name={'ios-home'} size={32} color="#ffffff" />
+                        <Ionicons name={'ios-home'}  size={30} color="#ffffff" />
                       </View>
                     );
                 },}}
@@ -72,7 +76,7 @@ class MyTabs extends React.Component {
                 options={{ tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <Ionicons name={'ios-book'} size={32} color="#ffffff" />
+                        <Ionicons name={'ios-book'} size={30} color="#ffffff" />
                       </View>
                     );
                 },}}
@@ -86,12 +90,12 @@ class MyTabs extends React.Component {
                     );
                 },}}
               />
-              <Tab.Screen name="PromoTwo" component={PromoTwo}
+              <Tab.Screen name="Promotion" component={Promotion}
                 options={{
                   tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <Ionicons name={'ios-search'} size={32} color="#ffffff" />
+                        <Ionicons name={'ios-search'} size={30} color="#ffffff" />
                       </View>
                     );
                 },}}
@@ -101,7 +105,7 @@ class MyTabs extends React.Component {
                   tabBarIcon: ({ focused }) => {
                     return (
                       <View>
-                        <MaterialCommunityIcons name="account-circle" size={32} color="#ffffff" />
+                        <MaterialCommunityIcons name="account-circle" size={30} color="#ffffff" />
                       </View>
                     );
                 },}}
@@ -127,10 +131,12 @@ class App extends Component {
   
 	render = () => {
 		return (
-      <NavigationContainer> 
+      <NavigationContainer style={styles.container}> 
         {/* {
           this.state.loggingStatus ? ( */}
-            <MyTabs onStatusChange={this.changeLoggingState}/>
+         {/* <Header/> */}
+            <MyTabs style={styles.container}/>
+            {/* <MyTabs onStatusChange={this.changeLoggingState}/> */}
         {/*  ) : (
         //   <LoginScreen onStatusChange={this.changeLoggingState}/>
         //     )
@@ -142,10 +148,15 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-		flex: 1,
-		justifyContent: 'flex-start',
-		backgroundColor: 'lightgrey',
+		// flex: 1,
+		// justifyContent: 'flex-start',
+		// backgroundColor: 'lightgrey',
+    height: 100,
+    padding: 100
 	},
+  icon: {
+    paddingTop: 10
+  },
     heading: {
 		//flex: 0,
 		alignItems: 'center',
