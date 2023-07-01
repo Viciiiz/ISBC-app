@@ -1,7 +1,8 @@
 // Import necessary dependencies
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Dimensions, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Dimensions, StatusBar, Linking } from 'react-native';
 import { Ionicons, Foundation } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 // import Carousel, { Pagination } from 'react-native-snap-carousel';
 
@@ -10,6 +11,7 @@ import Header from '../components/Header';
 
 const HomeTwo = () => {
 
+  const navigation = useNavigation();
 
   useEffect(() => {
     StatusBar.setHidden(true); // Hide the status bar when the page is mounted
@@ -56,26 +58,15 @@ const HomeTwo = () => {
   // Handle box press event
   const handleBoxPress = (text) => {
     // Handle the box press event based on the text
+    if(text == "Website") {
+        Linking.openURL("https://isbc.ubf.org");
+    } else if(text == "Overview & Program") {
+        navigation.navigate('Promo')
+    } else if(text == "Profile") {
+        navigation.navigate('Profile')
+    }
     console.log(`Pressed: ${text}`);
   };
-
-//   const bannerData = [
-//     { image: require('../assets/banner.png') },
-//     { image: require('../assets/banner2.png') },
-//     { image: require('../assets/banner3.png') },
-//   ];
-//   const [activeSlide, setActiveSlide] = React.useState(0);
-
-//   const renderBannerItem = ({ item }) => {
-//     return (
-//       <Image
-//         source={item.image}
-//         style={styles.bannerImage}
-//         // resizeMode="cover"
-//         resizeMode="contain"
-//       />
-//     );
-//   };
 
   return (
     <ScrollView style={styles.container}>

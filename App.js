@@ -16,6 +16,7 @@ import Promo from './Screens/Promo';
 import Home from './Screens/Home';
 import Promotion from './Screens/Promotion';
 import HomeTwo from './Screens/HomeTwo';
+import Profile from './Screens/Profile';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -29,96 +30,99 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+const Stack = createNativeStackNavigator();
+
+
 
 const app = initializeApp(firebaseConfig);
 const Tab = createBottomTabNavigator();
 
 
 
-class MyTabs extends React.Component {
+// class MyTabs extends React.Component {
 
 
-  constructor(props) {
-    super(props)
-    this.handleStatusChange=this.handleStatusChange.bind(this)
-  }
+//   constructor(props) {
+//     super(props)
+//     this.handleStatusChange=this.handleStatusChange.bind(this)
+//   }
 
-  handleStatusChange = () =>{
-    this.props.onStatusChange()
-  }
+//   handleStatusChange = () =>{
+//     this.props.onStatusChange()
+//   }
 
-  render = () =>{
-      return (
-        <Tab.Navigator initialRouteName="Home"
-          style={styles.container}
-          screenOptions={{
-            "tabBarActiveTintColor": "#fff",
-            "tabBarInactiveTintColor": "lightgray",
-            "tabBarActiveBackgroundColor": "black",
-            "tabBarInactiveBackgroundColor": "black",
-            "tabBarStyle": [
-              {
-                "display": "flex",
-                height: 50,
-                // paddingTop: -8,
-                // alignItems: 'center'
-              },
-              null
-            ],
-            headerShown: false,
-            // tabBarLabel: '',
-        }}>
-              <Tab.Screen name="Home" component={Home} style={styles.container}
-                options={{ tabBarIcon: ({ focused }) => {
-                    return (
-                      <View style={styles.tabIconContainer}>
-                        <Ionicons name={'ios-home'}  size={30} color="#ffffff" />
-                      </View>
-                    );
-                },}}
-              />
-              <Tab.Screen name="Promo" component={Promo}
-                options={{ tabBarIcon: ({ focused }) => {
-                    return (
-                      <View>
-                        <Ionicons name={'ios-book'} size={30} color="#ffffff" />
-                      </View>
-                    );
-                },}}
-              />
-              <Tab.Screen name="Test" component={Test}
-                options={{ tabBarIcon: ({ focused }) => {
-                    return (
-                      <View>
-                        <Ionicons name={'ios-add'} size={32} color="#ffffff" />
-                      </View>
-                    );
-                },}}
-              />
-              <Tab.Screen name="Promotion" component={Promotion}
-                options={{
-                  tabBarIcon: ({ focused }) => {
-                    return (
-                      <View>
-                        <Ionicons name={'ios-search'} size={30} color="#ffffff" />
-                      </View>
-                    );
-                },}}
-              />
-              <Tab.Screen name="Profile" children={()=><HomeTwo onStatusChange={this.handleStatusChange}/>}
-                options={{
-                  tabBarIcon: ({ focused }) => {
-                    return (
-                      <View>
-                        <MaterialCommunityIcons name="account-circle" size={30} color="#ffffff" />
-                      </View>
-                    );
-                },}}
-              /> 
-        </Tab.Navigator>
-      );
-  }
-}
+//   render = () =>{
+//       return (
+//         <Tab.Navigator initialRouteName="Home"
+//           style={styles.container}
+//           screenOptions={{
+//             "tabBarActiveTintColor": "#fff",
+//             "tabBarInactiveTintColor": "lightgray",
+//             "tabBarActiveBackgroundColor": "black",
+//             "tabBarInactiveBackgroundColor": "black",
+//             "tabBarStyle": [
+//               {
+//                 "display": "flex",
+//                 height: 50,
+//                 // paddingTop: -8,
+//                 // alignItems: 'center'
+//               },
+//               null
+//             ],
+//             headerShown: false,
+//             // tabBarLabel: '',
+//         }}>
+//               <Tab.Screen name="Home" component={Home} style={styles.container}
+//                 options={{ tabBarIcon: ({ focused }) => {
+//                     return (
+//                       <View style={styles.tabIconContainer}>
+//                         <Ionicons name={'ios-home'}  size={30} color="#ffffff" />
+//                       </View>
+//                     );
+//                 },}}
+//               />
+//               <Tab.Screen name="Promo" component={Promo}
+//                 options={{ tabBarIcon: ({ focused }) => {
+//                     return (
+//                       <View>
+//                         <Ionicons name={'ios-book'} size={30} color="#ffffff" />
+//                       </View>
+//                     );
+//                 },}}
+//               />
+//               <Tab.Screen name="Test" component={Test}
+//                 options={{ tabBarIcon: ({ focused }) => {
+//                     return (
+//                       <View>
+//                         <Ionicons name={'ios-add'} size={32} color="#ffffff" />
+//                       </View>
+//                     );
+//                 },}}
+//               />
+//               <Tab.Screen name="Promotion" component={Promotion}
+//                 options={{
+//                   tabBarIcon: ({ focused }) => {
+//                     return (
+//                       <View>
+//                         <Ionicons name={'ios-search'} size={30} color="#ffffff" />
+//                       </View>
+//                     );
+//                 },}}
+//               />
+//               <Tab.Screen name="Profile" children={()=><HomeTwo onStatusChange={this.handleStatusChange}/>}
+//                 options={{
+//                   tabBarIcon: ({ focused }) => {
+//                     return (
+//                       <View>
+//                         <MaterialCommunityIcons name="account-circle" size={30} color="#ffffff" />
+//                       </View>
+//                     );
+//                 },}}
+//               /> 
+//         </Tab.Navigator>
+//       );
+//   }
+// }
 
 
 class App extends Component {
@@ -136,17 +140,44 @@ class App extends Component {
   
 	render = () => {
 		return (
-      <NavigationContainer style={styles.container}> 
-        {/* {
-          this.state.loggingStatus ? ( */}
-         {/* <Header/> */}
-            <MyTabs style={styles.container}/>
-            {/* <MyTabs onStatusChange={this.changeLoggingState}/> */}
-        {/*  ) : (
-        //   <LoginScreen onStatusChange={this.changeLoggingState}/>
-        //     )
-         */}
-			</NavigationContainer>
+      // <NavigationContainer style={styles.container}> 
+      //   {/* {
+      //     this.state.loggingStatus ? ( */}
+      //    {/* <Header/> */}
+      //       <MyTabs style={styles.container}/>
+      //       {/* <MyTabs onStatusChange={this.changeLoggingState}/> */}
+      //   {/*  ) : (
+      //   //   <LoginScreen onStatusChange={this.changeLoggingState}/>
+      //   //     )
+      //    */}
+			// </NavigationContainer>
+      <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeTwo}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Promo"
+          component={Promo}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_left', // Specify the desired animation
+          }}
+        />
+      </Stack.Navigator>
+      </NavigationContainer>
     );
    }
 }

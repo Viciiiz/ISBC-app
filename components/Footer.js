@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e5e5e5',
     // paddingVertical: 10,
-    paddingTop: 20,
+    paddingTop: 120,
     paddingHorizontal: 20
   },
   heading: {
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     padding: 0
   },
   linkText: {
-    color: '#000',
+    color: '#00f',
     // fontWeight: 'bold',
     // textDecorationLine: 'underline',
     fontSize: 18,
