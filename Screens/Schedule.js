@@ -30,7 +30,7 @@ const Schedule = () => {
                     handleBoxPress('SaturdayFull')
                 }} />
                 <CustomButton name="Sunday" onClick={() => { 
-                    handleBoxPress('Promo')
+                    handleBoxPress('SundayFull')
                 }} />
 
             </View>

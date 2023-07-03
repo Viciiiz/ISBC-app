@@ -23,6 +23,7 @@ import Friday from './Screens/schedule-days/Friday';
 import ThursdayFull from './Screens/schedule/ThursdayFull';
 import FridayFull from './Screens/schedule/FridayFull';
 import SaturdayFull from './Screens/schedule/SaturdayFull';
+import SundayFull from './Screens/schedule/SundayFull';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -225,6 +226,14 @@ class App extends Component {
         <Stack.Screen
           name="SaturdayFull"
           component={SaturdayFull}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="SundayFull"
+          component={SundayFull}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
