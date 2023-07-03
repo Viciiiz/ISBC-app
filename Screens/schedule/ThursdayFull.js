@@ -15,16 +15,20 @@ const ThursdayFull = () => {
   }, []);
 
   const boxesData = [
-    { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
-    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", time: '9:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
   ]
 
   const calculateHeight = (duration) => {
     return duration * 50;
+  };
+
+  const handlePress = (link) => {
+    // navigation.navigate(screen);
   };
 
   const scheduleRender = () => {
@@ -37,17 +41,23 @@ const ThursdayFull = () => {
                   <Text style={[styles.elementDetail,
                     { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
                 ) : null}
-                <Text style={[
-                  box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
-                  { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
-                ]}>{box.textTitle}</Text>
+                <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                  <Text style={[
+                    box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
+                    { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
+                  ]}>{box.textTitle}</Text>
+                </TouchableOpacity>
                 {box.textDetail !== "" ? (
-                  <Text style={[styles.elementDetail,
-                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
+                  <TouchableOpacity onPress={handlePress(box.detailLink)}>
+                    <Text style={[styles.elementDetail,
+                      { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
+                  </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <Text style={[styles.elementDetail,
-                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
+                  <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                    <Text style={[styles.elementDetail,
+                      { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
+                  </TouchableOpacity>
                 ) : null}
                 
             </View>
