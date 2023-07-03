@@ -27,7 +27,7 @@ const Schedule = () => {
                     handleBoxPress('FridayFull')
                 }} />
                 <CustomButton name="Saturday" onClick={() => { 
-                    handleBoxPress('Promo')
+                    handleBoxPress('SaturdayFull')
                 }} />
                 <CustomButton name="Sunday" onClick={() => { 
                     handleBoxPress('Promo')

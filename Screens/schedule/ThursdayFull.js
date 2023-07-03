@@ -6,13 +6,13 @@ import { useNavigation } from '@react-navigation/native';
 import Footer from '../../components/Footer';
 
 const ThursdayFull = () => {
-  useEffect(() => {
-    StatusBar.setHidden(true); // Hide the status bar when the page is mounted
+  // useEffect(() => {
+  //   StatusBar.setHidden(true); // Hide the status bar when the page is mounted
 
-    return () => {
-      StatusBar.setHidden(false); // Show the status bar when the page is unmounted
-    };
-  }, []);
+  //   return () => {
+  //     StatusBar.setHidden(false); // Show the status bar when the page is unmounted
+  //   };
+  // }, []);
 
   const boxesData = [
     { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
