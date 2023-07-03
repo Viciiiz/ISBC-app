@@ -15,12 +15,12 @@ const ThursdayFull = () => {
   }, []);
 
   const boxesData = [
-    { duration: 5, textTitle: 'Registration', textDetail: "", textDetailTwo: "", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'yes' },
-    { duration: 1.75, textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'yes' },
-    { duration: 1, textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'yes', done: 'no' },
-    { duration: 3, textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", time: '9:00pm', backgroundColor: '#fff', separation: 'no', transition: 'no', done: 'no' },
-    { duration: 4, textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", time: '9:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'no' },
-    { duration: 1.75, textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'no' },
+    { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", time: '9:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
   ]
 
   const calculateHeight = (duration) => {
@@ -33,9 +33,13 @@ const ThursdayFull = () => {
         {boxesData.map((box, index) => (
           <View style={box.transition == 'no' ? styles.singleContainer : null} key={index} >
             <View style={[styles.elementContainer, { backgroundColor: box.backgroundColor }, {height: calculateHeight(box.duration)}]}>
+                {box.header !== '' ? (
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
+                ) : null}
                 <Text style={[
-                  box.transition === 'no' ? styles.elementTitle : styles.elementTitleTransition,
-                  { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }
+                  box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
+                  { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
                 ]}>{box.textTitle}</Text>
                 {box.textDetail !== "" ? (
                   <Text style={[styles.elementDetail,
@@ -70,10 +74,6 @@ const ThursdayFull = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* <View style={styles.titleContainer}>
-        
-        <Text style={styles.title}>Thursday</Text>
-      </View> */}
       <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.backButton} onPress={handleBackButtonPress}>
           <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
@@ -147,21 +147,34 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginHorizontal: 50
   },
+  elementTitleMeal: {
+    fontSize: 28,
+    // fontWeight: 'bold',
+    fontStyle: 'italic',
+    // color: '#000',
+    textAlign: 'center',
+    marginHorizontal: 50
+  },
   elementTitleTransition: {
     fontSize: 20,
     // fontWeight: '',
     // color: '#1165c6',
+    fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal: 50
   },
   elementDetail: {
     fontSize: 20,
     color: '#1165c6',
+    marginHorizontal: 50,
+    textAlign: 'center',
   },
   separationContainer: {
     // flexDirection: 'row',
     // flexWrap: 'wrap',
     // alignItems: 'flex-start'
+    marginTop: 20,
+    marginBottom: 15
   },
   time: {
     fontSize: 20,

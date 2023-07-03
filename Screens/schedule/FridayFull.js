@@ -1,0 +1,217 @@
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+import Footer from '../../components/Footer';
+
+const FridayFull = () => {
+  useEffect(() => {
+    StatusBar.setHidden(true); // Hide the status bar when the page is mounted
+
+    return () => {
+      StatusBar.setHidden(false); // Show the status bar when the page is unmounted
+    };
+  }, []);
+
+  const boxesData = [
+    { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", time: '6:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '8:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "", time: '10:15pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '10:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 4, header: '', textTitle: '"The Glory of Jesus, God incarnate"', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "Eberhard Gross (Germany)", time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: '', textTitle: 'Interest Group (IG)', textDetail: "", textDetailTwo: "", time: '3:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '3:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: 'Special Lecture', textTitle: 'His Glory through Spiritual Revival', textDetail: "Dr. Timothy Tennent", textDetailTwo: "(President, Asbury Seminary)", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus, To Forgive Sins"', textDetail: "(Luke 5:17-26)", textDetailTwo: "John Fatoyinbo (Nigeria)", time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: '"To Change Lives"', textDetail: "(Luke 5:27-32)", textDetailTwo: "Josue Gutierrez (Panama)", time: '7:50pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Break', textDetail: "", textDetailTwo: "", time: '8:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2, header: '', textTitle: 'World Mission Festival', textDetail: "- Africa, Latin America, Europe, ME -", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+
+
+]
+
+  const calculateHeight = (duration) => {
+    return duration * 50;
+  };
+
+  const scheduleRender = () => {
+    return (
+      <View>
+        {boxesData.map((box, index) => (
+          <View style={box.transition == 'no' ? styles.singleContainer : null} key={index} >
+            <View style={[styles.elementContainer, { backgroundColor: box.backgroundColor }, {height: calculateHeight(box.duration)}]}>
+                {box.header !== '' ? (
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
+                ) : null}
+                <Text style={[
+                  box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
+                  { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
+                ]}>{box.textTitle}</Text>
+                {box.textDetail !== "" ? (
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
+                ) : null}
+                {box.textDetailTwo !== "" ? (
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
+                ) : null}
+                
+            </View>
+            {box.separation == "yes" ? (
+                <View style={styles.separationContainer}>
+                  <Text style={[styles.time,
+                  { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.time}</Text>
+                  <View style={[styles.line,
+                  { borderBottomColor: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}/>
+                </View>
+              ) : null}
+            
+          </View>
+        ))}
+      </View>
+    );
+  }
+
+  const navigation = useNavigation();
+
+  const handleBackButtonPress = () => {
+    navigation.goBack();
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.backButton} onPress={handleBackButtonPress}>
+          <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
+        <Text style={styles.title}>Friday</Text>
+      </View>
+      <View style={styles.scheduleContainer}>
+        {scheduleRender()}
+      </View>
+       <Footer />
+     </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    // flexGrow: 1,
+    backgroundColor: '#5300EB',
+    // alignItems: 'center',
+    
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: 35,
+    paddingBottom: 10,
+    // paddingVertical: 30,
+    backgroundColor: '#5300EB'
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // justifyContent: 'space-between',
+    borderColor: '#fff',
+    borderWidth: 1.5,
+    borderRadius: 15,
+    // padding: 10
+  },
+  backButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    paddingRight: 10,
+    paddingLeft: 5,
+    paddingVertical: 5,
+  },
+  backButtonIcon: {
+    paddingLeft: 10
+  },
+  singleContainer: {
+    padding: 5
+  },
+  titleContainer: {
+    backgroundColor: '#5300EB',
+  },
+  scheduleContainer: {
+    margin: 20,
+    backgroundColor: '#fff'
+  },
+  elementContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  elementTitle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    // color: '#1165c6',
+    textAlign: 'center',
+    marginHorizontal: 50
+  },
+  elementTitleMeal: {
+    fontSize: 28,
+    // fontWeight: 'bold',
+    fontStyle: 'italic',
+    // color: '#000',
+    textAlign: 'center',
+    marginHorizontal: 50
+  },
+  elementTitleTransition: {
+    fontSize: 20,
+    // fontWeight: '',
+    // color: '#000',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginHorizontal: 50
+  },
+  elementDetail: {
+    fontSize: 20,
+    color: '#1165c6',
+    marginHorizontal: 50,
+    textAlign: 'center',
+  },
+  separationContainer: {
+    // flexDirection: 'row',
+    // flexWrap: 'wrap',
+    // alignItems: 'flex-start'
+    marginTop: 20,
+    marginBottom: 15
+  },
+  time: {
+    fontSize: 20,
+    marginHorizontal: 10,
+    fontWeight: 'bold',
+    color: '#1165c6',
+    padding: 0,
+    marginTop: -20
+  },
+  line: {
+    // borderBottomColor: '#1165c6',
+    borderBottomWidth: 3
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    // margin: 20,
+    color: '#fff',
+    textAlign: 'center',
+    paddingHorizontal: 10,
+    // paddingTop: 10
+    // backgroundColor: '#5300EB'
+  },
+});
+
+export default FridayFull;

@@ -21,6 +21,7 @@ import Schedule from './Screens/Schedule';
 import Thursday from './Screens/schedule-days/Thursday';
 import Friday from './Screens/schedule-days/Friday';
 import ThursdayFull from './Screens/schedule/ThursdayFull';
+import FridayFull from './Screens/schedule/FridayFull';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -207,6 +208,14 @@ class App extends Component {
         <Stack.Screen
           name="ThursdayFull"
           component={ThursdayFull}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="FridayFull"
+          component={FridayFull}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
