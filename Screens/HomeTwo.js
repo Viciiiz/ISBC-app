@@ -60,8 +60,8 @@ const HomeTwo = () => {
     // Handle the box press event based on the text
     if(text == "Website") {
         Linking.openURL("https://isbc.ubf.org");
-    } else if(text == "Overview & Program") {
-        navigation.navigate('Schedule')
+    } else if(text == "Schedule") {
+        navigation.navigate('ScheduleCategory')
     } else if(text == "Profile") {
         navigation.navigate('Profile')
     } 

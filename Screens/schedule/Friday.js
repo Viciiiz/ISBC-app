@@ -5,26 +5,37 @@ import { useNavigation } from '@react-navigation/native';
 
 import Footer from '../../components/Footer';
 
-const SundayFull = () => {
+const Friday = () => {
+  useEffect(() => {
+    StatusBar.setHidden(false); // show the status bar when the page is mounted
 
-    useEffect(() => {
-        StatusBar.setHidden(false); // show the status bar when the page is mounted
-    
-        return () => {
-        StatusBar.setHidden(true); // hide the status bar when the page is unmounted
-        };
-    }, []);
+    return () => {
+      StatusBar.setHidden(true); // hide the status bar when the page is unmounted
+    };
+  }, []);
 
   const boxesData = [
     { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
-    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.5, header: '', textTitle: 'Glorious Jesus is Coming Soon', textDetail: "(Revelation 1:1-20)", textDetailTwo: "William Larsen (USA)", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:00am', backgroundColor: '#fff', separation: '', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 2, header: '', textTitle: '', textDetail: "*Offering for Global Missions", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:00am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 4, header: '', textTitle: 'Altar Call & Benediction', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 4, header: '', textTitle: '"The Glory of Jesus, God incarnate"', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "Eberhard Gross (Germany)", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
-  ]
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: '', textTitle: 'Interest Group (IG)', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '3:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '3:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3, header: 'Special Lecture', textTitle: 'His Glory through Spiritual Revival', textDetail: "Dr. Timothy Tennent", textDetailTwo: "(President, Asbury Seminary)", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus, To Forgive Sins"', textDetail: "(Luke 5:17-26)", textDetailTwo: "John Fatoyinbo (Nigeria)", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: '"To Change Lives"', textDetail: "(Luke 5:27-32)", textDetailTwo: "Josue Gutierrez (Panama)", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:50pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Break', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2, header: '', textTitle: 'World Mission Festival', textDetail: "- Africa, Latin America, Europe, ME -", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+
+
+]
 
   const calculateHeight = (duration) => {
     return duration * 50;
@@ -92,7 +103,7 @@ const SundayFull = () => {
           <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
           <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>Sunday</Text>
+        <Text style={styles.title}>Friday</Text>
       </View>
       <View style={styles.scheduleContainer}>
         {scheduleRender()}
@@ -171,7 +182,7 @@ const styles = StyleSheet.create({
   elementTitleTransition: {
     fontSize: 20,
     // fontWeight: '',
-    // color: '#1165c6',
+    // color: '#000',
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal: 50
@@ -213,4 +224,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SundayFull;
+export default Friday;

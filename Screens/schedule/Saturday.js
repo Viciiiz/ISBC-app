@@ -5,23 +5,38 @@ import { useNavigation } from '@react-navigation/native';
 
 import Footer from '../../components/Footer';
 
-const ThursdayFull = () => {
-  useEffect(() => {
-    StatusBar.setHidden(false); // show the status bar when the page is mounted
-
-    return () => {
-      StatusBar.setHidden(true); // hide the status bar when the page is unmounted
-    };
-  }, []);
+const Saturday = () => {
+    
+    useEffect(() => {
+        StatusBar.setHidden(false); // show the status bar when the page is mounted
+    
+        return () => {
+        StatusBar.setHidden(true); // hide the status bar when the page is unmounted
+        };
+    }, []);
 
   const boxesData = [
-    { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 19:16-42)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 4, header: '', textTitle: '"The Glory of Jesus on the Cross"', textDetail: "(John 19:16-42)", textDetailTwo: "Phillip Brown (USA)", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 3.5, header: '', textTitle: 'Reflection Writing & Sharing', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '3:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: 'Sports / Free Time', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-  ]
+    { duration: 2.5, header: '', textTitle: 'The Glory of Risen Jesus: Encountering Paul', textDetail: "(Acts 9:1-9)", textDetailTwo: "Mark Hui (Taiwan)", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: 'Empowering Paul', textDetail: "(Acts 9:10-22)", textDetailTwo: "Abraham Yugai (KZ)", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:50pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.5, header: '', textTitle: 'Break', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 2, header: '', textTitle: 'World Mission Festival', textDetail: "- Oceania, Asia, CIS -", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 0.75, header: '', textTitle: '*Ice Cream Social', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+
+
+]
 
   const calculateHeight = (duration) => {
     return duration * 50;
@@ -89,7 +104,7 @@ const ThursdayFull = () => {
           <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
           <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>Thursday</Text>
+        <Text style={styles.title}>Saturday</Text>
       </View>
       <View style={styles.scheduleContainer}>
         {scheduleRender()}
@@ -168,7 +183,7 @@ const styles = StyleSheet.create({
   elementTitleTransition: {
     fontSize: 20,
     // fontWeight: '',
-    // color: '#1165c6',
+    // color: '#000',
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal: 50
@@ -210,4 +225,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ThursdayFull;
+export default Saturday;

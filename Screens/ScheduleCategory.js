@@ -9,13 +9,12 @@ import BackButton from '../components/BackButton';
 
 
 
-const Schedule = () => {
+const ScheduleCategory = () => {
 
     const boxesData = [
-        { text: 'Thursday', color: '#888888' },
-        { text: 'Friday', color: '#555555' },
-        { text: 'Saturday', color: '#333333' },
-        { text: 'Sunday', color: '#000000' },
+        { text: 'General', color: '#888888' },
+        { text: 'HBF', color: '#555555' },
+        { text: 'CBF', color: '#333333' },
     ]
     
     // Render the clickable boxes
@@ -36,7 +35,10 @@ const Schedule = () => {
     // Handle box press event
     const handleBoxPress = (text) => {
         // Handle the box press event based on the text
-        navigation.navigate(text)
+        if (text == 'General') {
+            navigation.navigate('Schedule')
+        }
+        
 
         console.log(`Pressed: ${text}`);
       };
@@ -111,5 +113,5 @@ const styles = StyleSheet.create({
       },
 });
 
-export default Schedule;
+export default ScheduleCategory;
 

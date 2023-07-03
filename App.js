@@ -18,12 +18,13 @@ import Promotion from './Screens/Promotion';
 import HomeTwo from './Screens/HomeTwo';
 import Profile from './Screens/Profile';
 import Schedule from './Screens/Schedule';
-import Thursday from './Screens/schedule-days/Thursday';
-import Friday from './Screens/schedule-days/Friday';
-import ThursdayFull from './Screens/schedule/ThursdayFull';
-import FridayFull from './Screens/schedule/FridayFull';
-import SaturdayFull from './Screens/schedule/SaturdayFull';
-import SundayFull from './Screens/schedule/SundayFull';
+// import Thursday from './Screens/schedule-days/Thursday';
+// import Friday from './Screens/schedule-days/Friday';
+import Thursday from './Screens/schedule/Thursday';
+import Friday from './Screens/schedule/Friday';
+import Saturday from './Screens/schedule/Saturday';
+import Sunday from './Screens/schedule/Sunday';
+import ScheduleCategory from './Screens/ScheduleCategory';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -208,32 +209,24 @@ class App extends Component {
           }}
         />
         <Stack.Screen
-          name="ThursdayFull"
-          component={ThursdayFull}
+          name="Saturday"
+          component={Saturday}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
           }}
         />
         <Stack.Screen
-          name="FridayFull"
-          component={FridayFull}
+          name="Sunday"
+          component={Sunday}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
           }}
         />
         <Stack.Screen
-          name="SaturdayFull"
-          component={SaturdayFull}
-          options={{
-            headerShown: false,
-            animation: 'slide_from_right', // Specify the desired animation
-          }}
-        />
-        <Stack.Screen
-          name="SundayFull"
-          component={SundayFull}
+          name="ScheduleCategory"
+          component={ScheduleCategory}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
