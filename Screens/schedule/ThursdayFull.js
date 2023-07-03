@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import Footer from '../../components/Footer';
 
@@ -13,12 +15,12 @@ const ThursdayFull = () => {
   }, []);
 
   const boxesData = [
-    { duration: 5, textTitle: 'Registration', textDetail: "", textDetailTwo: "", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', transition: 'no' },
-    { duration: 1.75, textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no' },
-    { duration: 1, textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'yes' },
-    { duration: 4, textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", time: '9:00pm', backgroundColor: '#fff', separation: 'no', transition: 'no' },
-    { duration: 4, textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", time: '9:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'no' },
-    { duration: 1.75, textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no' },
+    { duration: 5, textTitle: 'Registration', textDetail: "", textDetailTwo: "", time: '4:45pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'yes' },
+    { duration: 1.75, textTitle: 'Dinner', textDetail: "", textDetailTwo: "", time: '6:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'yes' },
+    { duration: 1, textTitle: 'Transition', textDetail: "", textDetailTwo: "", time: '7:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'yes', done: 'no' },
+    { duration: 3, textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", time: '9:00pm', backgroundColor: '#fff', separation: 'no', transition: 'no', done: 'no' },
+    { duration: 4, textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", time: '9:00pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'no' },
+    { duration: 1.75, textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", time: '9:30pm', backgroundColor: '#fff', separation: 'yes', transition: 'no', done: 'no' },
   ]
 
   const calculateHeight = (duration) => {
@@ -29,21 +31,28 @@ const ThursdayFull = () => {
     return (
       <View>
         {boxesData.map((box, index) => (
-          <View style={box.transition == 'no' ? styles.singleContainer : null}>
-            <View style={[styles.elementContainer, { backgroundColor: box.backgroundColor }, {height: calculateHeight(box.duration)}]} key={index} >
-                <Text style={box.transition == 'no' ? styles.elementTitle : styles.elementTitleTransition}>{box.textTitle}</Text>
+          <View style={box.transition == 'no' ? styles.singleContainer : null} key={index} >
+            <View style={[styles.elementContainer, { backgroundColor: box.backgroundColor }, {height: calculateHeight(box.duration)}]}>
+                <Text style={[
+                  box.transition === 'no' ? styles.elementTitle : styles.elementTitleTransition,
+                  { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }
+                ]}>{box.textTitle}</Text>
                 {box.textDetail !== "" ? (
-                  <Text style={styles.elementDetail}>{box.textDetail}</Text>
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <Text style={styles.elementDetail}>{box.textDetailTwo}</Text>
+                  <Text style={[styles.elementDetail,
+                    { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                 ) : null}
                 
             </View>
             {box.separation == "yes" ? (
                 <View style={styles.separationContainer}>
-                  <Text style={styles.time}>{box.time}</Text>
-                  <View style={styles.line}/>
+                  <Text style={[styles.time,
+                  { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.time}</Text>
+                  <View style={[styles.line,
+                  { borderBottomColor: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}/>
                 </View>
               ) : null}
             
@@ -53,20 +62,26 @@ const ThursdayFull = () => {
     );
   }
 
+  const navigation = useNavigation();
+
+  const handleBackButtonPress = () => {
+    navigation.goBack();
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.titleContainer}>
+      {/* <View style={styles.titleContainer}>
         
+        <Text style={styles.title}>Thursday</Text>
+      </View> */}
+      <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.backButton} onPress={handleBackButtonPress}>
+          <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
         <Text style={styles.title}>Thursday</Text>
       </View>
       <View style={styles.scheduleContainer}>
-        {/* <View style={[styles.elementContainer, { height: 300 }]}>
-          <Text style={styles.element}>Registration</Text>
-        </View>
-        <View style={styles.separationContainer}>
-          <Text style={styles.time}>4:45pm</Text>
-          <View style={styles.line}/>
-        </View> */}
         {scheduleRender()}
       </View>
        <Footer />
@@ -77,9 +92,39 @@ const ThursdayFull = () => {
 const styles = StyleSheet.create({
   container: {
     // flexGrow: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#5300EB',
     // alignItems: 'center',
     
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: 35,
+    paddingBottom: 10,
+    // paddingVertical: 30,
+    backgroundColor: '#5300EB'
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // justifyContent: 'space-between',
+    borderColor: '#fff',
+    borderWidth: 1.5,
+    borderRadius: 15,
+    // padding: 10
+  },
+  backButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    paddingRight: 10,
+    paddingLeft: 5,
+    paddingVertical: 5,
+  },
+  backButtonIcon: {
+    paddingLeft: 10
   },
   singleContainer: {
     padding: 5
@@ -98,14 +143,14 @@ const styles = StyleSheet.create({
   elementTitle: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#1165c6',
+    // color: '#1165c6',
     textAlign: 'center',
     marginHorizontal: 50
   },
   elementTitleTransition: {
     fontSize: 20,
-    // fontWeight: 'bold',
-    color: '#1165c6',
+    // fontWeight: '',
+    // color: '#1165c6',
     textAlign: 'center',
     marginHorizontal: 50
   },
@@ -127,15 +172,17 @@ const styles = StyleSheet.create({
     marginTop: -20
   },
   line: {
-    borderBottomColor: '#1165c6',
+    // borderBottomColor: '#1165c6',
     borderBottomWidth: 3
   },
   title: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: 'bold',
-    margin: 20,
+    // margin: 20,
     color: '#fff',
     textAlign: 'center',
+    paddingHorizontal: 10,
+    // paddingTop: 10
     // backgroundColor: '#5300EB'
   },
 });
