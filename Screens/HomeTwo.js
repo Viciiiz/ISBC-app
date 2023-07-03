@@ -61,10 +61,10 @@ const HomeTwo = () => {
     if(text == "Website") {
         Linking.openURL("https://isbc.ubf.org");
     } else if(text == "Overview & Program") {
-        navigation.navigate('Promo')
+        navigation.navigate('Schedule')
     } else if(text == "Profile") {
         navigation.navigate('Profile')
-    }
+    } 
     console.log(`Pressed: ${text}`);
   };
 

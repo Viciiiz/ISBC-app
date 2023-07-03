@@ -17,6 +17,10 @@ import Home from './Screens/Home';
 import Promotion from './Screens/Promotion';
 import HomeTwo from './Screens/HomeTwo';
 import Profile from './Screens/Profile';
+import Schedule from './Screens/Schedule';
+import Thursday from './Screens/schedule-days/Thursday';
+import Friday from './Screens/schedule-days/Friday';
+import ThursdayFull from './Screens/schedule/ThursdayFull';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -173,7 +177,39 @@ class App extends Component {
           component={Profile}
           options={{
             headerShown: false,
-            animation: 'slide_from_left', // Specify the desired animation
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="Schedule"
+          component={Schedule}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="Thursday"
+          component={Thursday}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="Friday"
+          component={Friday}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="ThursdayFull"
+          component={ThursdayFull}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
           }}
         />
       </Stack.Navigator>

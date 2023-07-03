@@ -42,6 +42,7 @@ const Home = () => {
     
     // Add more boxes here as needed
   ];
+  
 
   // Render the clickable boxes
   const renderBoxes = () => {
@@ -111,7 +112,7 @@ const Home = () => {
       <ScrollView style={styles.containerButtons}>
         {renderBoxes()}
       </ScrollView>
-      <Footer/>
+      {/* <Footer/> */}
     </ScrollView>
   );
 };

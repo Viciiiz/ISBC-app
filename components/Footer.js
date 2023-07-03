@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   linkText: {
     color: '#00f',
     // fontWeight: 'bold',
-    // textDecorationLine: 'underline',
+    textDecorationLine: 'underline',
     fontSize: 18,
     paddingHorizontal: 5,
     paddingVertical: 2
