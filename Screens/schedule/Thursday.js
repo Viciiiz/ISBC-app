@@ -18,7 +18,7 @@ const Thursday = () => {
     { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", titleLink: '', detailLink: 'Template', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
     { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
   ]
@@ -27,8 +27,12 @@ const Thursday = () => {
     return duration * 50;
   };
 
+  const navigation = useNavigation();
+
   const handlePress = (link) => {
-    // navigation.navigate(screen);
+    // if (link != "") {
+    //   navigation.navigate(link);
+    // }
   };
 
   const scheduleRender = () => {
@@ -76,7 +80,7 @@ const Thursday = () => {
     );
   }
 
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   const handleBackButtonPress = () => {
     navigation.goBack();
@@ -102,7 +106,8 @@ const Thursday = () => {
 const styles = StyleSheet.create({
   container: {
     // flexGrow: 1,
-    backgroundColor: '#5300EB',
+    // backgroundColor: '#5300EB',
+    backgroundColor: '#ffffff',
     // alignItems: 'center',
     
   },
@@ -114,7 +119,8 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingBottom: 10,
     // paddingVertical: 30,
-    backgroundColor: '#5300EB'
+    // backgroundColor: '#5300EB'
+    backgroundColor: '#000'
   },
   backButton: {
     flexDirection: 'row',
@@ -168,7 +174,7 @@ const styles = StyleSheet.create({
   elementTitleTransition: {
     fontSize: 20,
     // fontWeight: '',
-    // color: '#1165c6',
+    // color: '#000',
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal: 50

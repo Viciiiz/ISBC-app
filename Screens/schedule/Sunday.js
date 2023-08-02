@@ -105,7 +105,8 @@ const Sunday = () => {
 const styles = StyleSheet.create({
   container: {
     // flexGrow: 1,
-    backgroundColor: '#5300EB',
+    // backgroundColor: '#5300EB',
+    backgroundColor: '#ffffff',
     // alignItems: 'center',
     
   },
@@ -117,7 +118,8 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingBottom: 10,
     // paddingVertical: 30,
-    backgroundColor: '#5300EB'
+    // backgroundColor: '#5300EB'
+    backgroundColor: '#000'
   },
   backButton: {
     flexDirection: 'row',
@@ -171,7 +173,7 @@ const styles = StyleSheet.create({
   elementTitleTransition: {
     fontSize: 20,
     // fontWeight: '',
-    // color: '#1165c6',
+    // color: '#000',
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal: 50

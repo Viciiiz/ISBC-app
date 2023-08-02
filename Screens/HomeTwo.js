@@ -23,17 +23,16 @@ const HomeTwo = () => {
 
   // Define the clickable boxes data
   const boxesData = [
-    { icon: 'ios-calendar', text: 'Overview & Program', color: '#777777' },
+    { icon: 'ios-calendar', text: 'Schedule & Program', color: '#777777' },
     { icon: 'ios-desktop', text: 'Website', color: '#333333' },
     { icon: 'ios-alert', text: 'Live News', color: '#ff3f3f' },
     { icon: 'ios-map', text: 'Campus Map', color: '#000000' },
     { icon: 'ios-newspaper', text: 'Bible Study Material', color: '#000000' },
-    { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
-    { icon: 'ios-people', text: 'Childcare', color: '#777777' },
-    { icon: 'ios-people', text: 'Interest Group', color: '#333333' },
+    // { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
+    { icon: 'ios-people', text: 'Interest Group', color: '#777777' },
     { icon: 'ios-list', text: 'Poll', color: '#333333' },
     { icon: 'ios-information', text: 'Help', color: '#000000' },
-    { icon: 'ios-chatbox', text: 'Contact us', color: '#777777' },
+    { icon: 'ios-chatbox', text: 'Requests & Feedback', color: '#777777' },
     { icon: 'ios-person', text: 'Profile', color: '#333333' },
     // { icon: 'ios-alert', text: 'Live News', color: '#333333' },
     
@@ -60,10 +59,12 @@ const HomeTwo = () => {
     // Handle the box press event based on the text
     if(text == "Website") {
         Linking.openURL("https://isbc.ubf.org");
-    } else if(text == "Schedule") {
+    } else if(text == "Schedule & Program") {
         navigation.navigate('ScheduleCategory')
     } else if(text == "Profile") {
         navigation.navigate('Profile')
+    } else if(text == "Bible Study Material") {
+        navigation.navigate('Template')
     } 
     console.log(`Pressed: ${text}`);
   };

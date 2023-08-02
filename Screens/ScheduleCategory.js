@@ -12,9 +12,9 @@ import BackButton from '../components/BackButton';
 const ScheduleCategory = () => {
 
     const boxesData = [
-        { text: 'General', color: '#888888' },
-        { text: 'HBF', color: '#555555' },
-        { text: 'CBF', color: '#333333' },
+        { text: 'General', textDetail: '(College & Adults)', color: '#888888' },
+        { text: 'HBF', textDetail: '(High School Bible Fellowship)', color: '#555555' },
+        { text: 'CBF', textDetail: '(Children Bible Fellowship)', color: '#333333' },
     ]
     
     // Render the clickable boxes
@@ -24,6 +24,7 @@ const ScheduleCategory = () => {
             {boxesData.map((box, index) => (
               <TouchableOpacity style={[styles.box, { backgroundColor: box.color }]} key={index} onPress={() => handleBoxPress(box.text)}>
                 <Text style={styles.boxText}>{box.text}</Text>
+                <Text style={styles.boxTextDetail}>{box.textDetail}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -100,6 +101,11 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         marginTop: 8,
+      },
+      boxTextDetail: {
+        color: '#ffffff',
+        fontSize: 20,
+        fontStyle: 'italic'
       },
       headerContainer: {
         flexDirection: 'row',
