@@ -7,16 +7,38 @@ import Footer from '../../../components/Footer';
 // import CustomButton from '../components/CustomButton';
 import BackButton from '../../../components/BackButton';
 
-import { isaiah } from '../../../content/Passages'
+import { isaiah, john, luke, luke2, john2, acts, acts2, revelation } from '../../../content/Passages'
 
 
 
-const Template = () => {
+const Template = ({ route }) => {
 
+    const { currentPassage } = route.params;
+
+    let currentVar = ""
+
+    if (currentPassage == "Isaiah 6:1-8") {
+      currentVar = isaiah;
+    } else if (currentPassage == "John 1:1-5 & 14") {
+      currentVar = john;
+    } else if (currentPassage == "Luke 5:17-26") {
+      currentVar = luke;
+    } else if (currentPassage == "Luke 5:27-32") {
+      currentVar = luke2;
+    } else if (currentPassage == "John 19:16-42") {
+      currentVar = john2;
+    } else if (currentPassage == "Acts 9:1-9") {
+      currentVar = acts;
+    } else if (currentPassage == "Acts 9:10-22") {
+      currentVar = acts2;
+    } else {
+      currentVar = revelation;
+    }  
     
     const navigation = useNavigation();
 
-    const paragraphs = isaiah.passage.split('\n');
+    const paragraphs = currentVar.passage.split('\n');
+    const questions = currentVar.questions.split('\n');
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
@@ -24,12 +46,23 @@ const Template = () => {
                 <BackButton/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.textTitle}>{isaiah.title}</Text>
+                <Text style={styles.textTitle}>{currentVar.title}</Text>
                 {paragraphs.map((paragraph, index) => (
                     <Text style={styles.text} key={index}>
                     {paragraph}
                     </Text>
                 ))}
+            </View>
+            <View style={styles.textContainer}>
+              {
+                currentVar.questions != "" ?
+                <Text style={styles.textTitle}>Questions</Text> : console.log("no questions")
+              }
+                {questions.map((paragraph, index) => (
+                    <Text style={styles.text} key={index}>
+                    {paragraph}
+                    </Text>
+                ))}              
             </View>
             {/* <Footer/> */}
         </ScrollView>
@@ -59,7 +92,7 @@ const styles = StyleSheet.create({
         // textAlign: 'center',
       },
       textContainer: {
-        padding: 15
+        padding: 25
       },
       textTitle: {
         fontSize: 30,

@@ -26,6 +26,7 @@ import Saturday from './Screens/schedule/Saturday';
 import Sunday from './Screens/schedule/Sunday';
 import ScheduleCategory from './Screens/ScheduleCategory';
 import Template from './Screens/material/passages/template';
+import Passages from './Screens/Passages';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -236,6 +237,14 @@ class App extends Component {
         <Stack.Screen
           name="Template"
           component={Template}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="Passages"
+          component={Passages}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation

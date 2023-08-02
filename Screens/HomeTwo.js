@@ -64,7 +64,7 @@ const HomeTwo = () => {
     } else if(text == "Profile") {
         navigation.navigate('Profile')
     } else if(text == "Bible Study Material") {
-        navigation.navigate('Template')
+        navigation.navigate('Passages')
     } 
     console.log(`Pressed: ${text}`);
   };
