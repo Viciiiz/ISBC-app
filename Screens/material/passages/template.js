@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,6 +12,14 @@ import { isaiah, john, luke, luke2, john2, acts, acts2, revelation } from '../..
 
 
 const Template = ({ route }) => {
+
+    useEffect(() => {
+      StatusBar.setHidden(true); // show the status bar when the page is mounted
+
+      return () => {
+        StatusBar.setHidden(true); // hide the status bar when the page is unmounted
+      };
+    }, []);
 
     const { currentPassage } = route.params;
 
