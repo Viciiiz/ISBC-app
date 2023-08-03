@@ -65,7 +65,7 @@ const Sunday = () => {
                   </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.detailTwoLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                   </TouchableOpacity>

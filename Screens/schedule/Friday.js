@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -26,7 +26,7 @@ const Friday = () => {
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 3, header: '', textTitle: 'Interest Group (IG)', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '3:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '3:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 3, header: 'Special Lecture', textTitle: '"The Risen Lord and the Glory of Revival"', textDetail: "Dr. Timothy Tennent", textDetailTwo: "(President, Asbury Seminary)", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 3, header: 'Special Lecture', textTitle: '"The Risen Lord and the Glory of Revival"', textDetail: "Dr. Timothy Tennent", textDetailTwo: "(President, Asbury Seminary)", titleLink: '', detailLink: 'personal site link', detailTwoLink: 'asbury link', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 2.5, header: '', textTitle: '"The Glory of Jesus\' Ministry: To Forgive Sins"', textDetail: "(Luke 5:17-26)", textDetailTwo: "John Fatoyinbo (Nigeria)", titleLink: 'Luke 5:17-26', detailLink: 'Luke 5:17-26', detailTwoLink: 'Luke 5:17-26', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
@@ -47,7 +47,11 @@ const Friday = () => {
     if (link == "John 1:1-5 & 14" || link == "Luke 5:17-26" || link == "Luke 5:27-32") {
       navigation.navigate('Template', { currentPassage });
       console.log("pressed: ", link)
-    } 
+    } else if (link == "personal site link") {
+      Linking.openURL("https://timothytennent.com")
+    } else if (link == "asbury link") {
+      Linking.openURL("https://asburyseminary.edu/")
+    }
   };
 
   const scheduleRender = () => {
@@ -73,7 +77,7 @@ const Friday = () => {
                   </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.detailTwoLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                   </TouchableOpacity>
