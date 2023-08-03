@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, StatusBar, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,9 +19,9 @@ const Sunday = () => {
     { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:00am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus\' Second Coming"', textDetail: "(Revelation 1:1-20)", textDetailTwo: "William Larsen (USA)", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: '', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus\' Second Coming"', textDetail: "(Revelation 1:1-20)", textDetailTwo: "William Larsen (USA)", titleLink: 'Revelation 1:1-20', detailLink: 'Revelation 1:1-20', detailTwoLink: 'Revelation 1:1-20', time: '10:30am', backgroundColor: '#fff', separation: '', meal: 'no', transition: 'no', done: 'no' },
     { duration: 2, header: '', textTitle: '', textDetail: "*Offering for Global Missions", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 4, header: '', textTitle: 'Altar Call & Benediction', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:20am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 4, header: '', textTitle: 'Altar Call & Benediction', textDetail: "(Click for Pledge Survey)", textDetailTwo: "", titleLink: '', detailLink: 'survey link', detailTwoLink: '', time: '11:20am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
   ]
@@ -31,7 +31,15 @@ const Sunday = () => {
   };
 
   const handlePress = (link) => {
-    // navigation.navigate(screen);
+
+    const currentPassage = link
+  
+    if (link == "Revelation 1:1-20") {
+      navigation.navigate('Template', { currentPassage });
+      console.log("pressed: ", link)
+    } else if (link == "survey link") {
+      Linking.openURL("https://docs.google.com/forms/d/e/1FAIpQLScjk8XcvKX-eLIgHIOO5ilEJ3_sZbJ0ZCiSXq8YUUuQFs5Y6g/viewform?usp=sf_link")
+    }
   };
 
   const scheduleRender = () => {
@@ -44,20 +52,20 @@ const Sunday = () => {
                   <Text style={[styles.elementDetail,
                     { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
                 ) : null}
-                <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                   <Text style={[
                     box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
                     { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
                   ]}>{box.textTitle}</Text>
                 </TouchableOpacity>
                 {box.textDetail !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.detailLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.detailLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
                   </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                   </TouchableOpacity>

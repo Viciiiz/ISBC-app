@@ -19,9 +19,9 @@ const Saturday = () => {
     { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 19:16-42)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 19:16-42)", textDetailTwo: "", titleLink: 'John 19:16-42', detailLink: 'John 19:16-42', detailTwoLink: 'John 19:16-42', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 4, header: '', textTitle: '"The Glory of the Crucified Christ"', textDetail: "(John 19:16-42)", textDetailTwo: "Phillip Brown (USA)", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 4, header: '', textTitle: '"The Glory of the Crucified Christ"', textDetail: "(John 19:16-42)", textDetailTwo: "Phillip Brown (USA)", titleLink: 'John 19:16-42', detailLink: 'John 19:16-42', detailTwoLink: 'John 19:16-42', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
@@ -29,8 +29,8 @@ const Saturday = () => {
     { duration: 2, header: '', textTitle: 'Sports / Free Time', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.5, header: '', textTitle: '"The Glory of Risen Jesus: Encountering Paul"', textDetail: "(Acts 9:1-9)", textDetailTwo: "Mark Hui (Taiwan)", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 2, header: '', textTitle: '"Empowering Paul"', textDetail: "(Acts 9:10-22)", textDetailTwo: "Abraham Yugai (KZ)", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:10pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2.5, header: '', textTitle: '"The Glory of Risen Jesus: Encountering Paul"', textDetail: "(Acts 9:1-9)", textDetailTwo: "Mark Hui (Taiwan)", titleLink: 'Acts 9:1-9', detailLink: 'Acts 9:1-9', detailTwoLink: 'Acts 9:1-9', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: '"Empowering Paul"', textDetail: "(Acts 9:10-22)", textDetailTwo: "Abraham Yugai (KZ)", titleLink: 'Acts 9:10-22', detailLink: 'Acts 9:10-22', detailTwoLink: 'Acts 9:10-22', time: '8:10pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Break', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:20pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 2, header: '', textTitle: 'World Mission Festival', textDetail: "- Oceania, Asia, CIS -", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:40pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.75, header: '', textTitle: '*Ice Cream Social', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
@@ -43,7 +43,13 @@ const Saturday = () => {
   };
 
   const handlePress = (link) => {
-    // navigation.navigate(screen);
+
+    const currentPassage = link
+  
+    if (link == "John 19:16-42" || link == "Acts 9:1-9" || link == "Acts 9:10-22") {
+      navigation.navigate('Template', { currentPassage });
+      console.log("pressed: ", link)
+    } 
   };
 
   const scheduleRender = () => {
@@ -56,20 +62,20 @@ const Saturday = () => {
                   <Text style={[styles.elementDetail,
                     { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
                 ) : null}
-                <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                   <Text style={[
                     box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
                     { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
                   ]}>{box.textTitle}</Text>
                 </TouchableOpacity>
                 {box.textDetail !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.detailLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.detailLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
                   </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                   </TouchableOpacity>

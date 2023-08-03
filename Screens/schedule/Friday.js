@@ -18,9 +18,9 @@ const Friday = () => {
     { duration: 0.25, header: '', textTitle: '', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Breakfast', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:30am', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2.75, header: '', textTitle: 'Group Bible Study', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "", titleLink: 'John 1:1-5 & 14', detailLink: 'John 1:1-5 & 14', detailTwoLink: 'John 1:1-5 & 14', time: '10:15am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '10:30am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 4, header: '', textTitle: '"The Glory of Jesus, God incarnate"', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "Eberhard Gross (Germany)", titleLink: '', detailLink: '', detailTwoLink: '', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 4, header: '', textTitle: '"The Glory of Jesus, God incarnate"', textDetail: "(John 1:1-5 & 14)", textDetailTwo: "Eberhard Gross (Germany)", titleLink: 'John 1:1-5 & 14', detailLink: 'John 1:1-5 & 14', detailTwoLink: 'John 1:1-5 & 14', time: '11:45am', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '12:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Lunch', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '1:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '2:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
@@ -29,11 +29,10 @@ const Friday = () => {
     { duration: 3, header: 'Special Lecture', textTitle: '"The Risen Lord and the Glory of Revival"', textDetail: "Dr. Timothy Tennent", textDetailTwo: "(President, Asbury Seminary)", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
-    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus\' Ministry: To Forgive Sins"', textDetail: "(Luke 5:17-26)", textDetailTwo: "John Fatoyinbo (Nigeria)", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
-    { duration: 2, header: '', textTitle: '"To Change Lives"', textDetail: "(Luke 5:27-32)", textDetailTwo: "Josue Gutierrez (Panama)", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:50pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2.5, header: '', textTitle: '"The Glory of Jesus\' Ministry: To Forgive Sins"', textDetail: "(Luke 5:17-26)", textDetailTwo: "John Fatoyinbo (Nigeria)", titleLink: 'Luke 5:17-26', detailLink: 'Luke 5:17-26', detailTwoLink: 'Luke 5:17-26', time: '', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 2, header: '', textTitle: '"To Change Lives"', textDetail: "(Luke 5:27-32)", textDetailTwo: "Josue Gutierrez (Panama)", titleLink: 'Luke 5:27-32', detailLink: 'Luke 5:27-32', detailTwoLink: 'Luke 5:27-32', time: '7:50pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 0.5, header: '', textTitle: 'Break', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '8:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 2, header: '', textTitle: 'World Mission Festival', textDetail: "- Africa, Latin America, Europe, ME -", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
-
 
 ]
 
@@ -42,7 +41,13 @@ const Friday = () => {
   };
 
   const handlePress = (link) => {
-    // navigation.navigate(screen);
+
+    const currentPassage = link
+  
+    if (link == "John 1:1-5 & 14" || link == "Luke 5:17-26" || link == "Luke 5:27-32") {
+      navigation.navigate('Template', { currentPassage });
+      console.log("pressed: ", link)
+    } 
   };
 
   const scheduleRender = () => {
@@ -55,20 +60,20 @@ const Friday = () => {
                   <Text style={[styles.elementDetail,
                     { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.header}</Text>
                 ) : null}
-                <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                   <Text style={[
                     box.transition === 'no' ? (box.meal === 'no' ? styles.elementTitle : styles.elementTitleMeal) : styles.elementTitleTransition,
                     { color: box.done === 'no' ? box.meal === 'no' ? box.transition === 'yes' ? '#000' : '#1165c6' : '#000' : '#9ea0a2' }
                   ]}>{box.textTitle}</Text>
                 </TouchableOpacity>
                 {box.textDetail !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.detailLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.detailLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetail}</Text>
                   </TouchableOpacity>
                 ) : null}
                 {box.textDetailTwo !== "" ? (
-                  <TouchableOpacity onPress={handlePress(box.titleLink)}>
+                  <TouchableOpacity onPress={() => handlePress(box.titleLink)}>
                     <Text style={[styles.elementDetail,
                       { color: box.done === 'no' ? '#1165c6' : '#9ea0a2' }]}>{box.textDetailTwo}</Text>
                   </TouchableOpacity>

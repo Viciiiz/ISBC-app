@@ -61,8 +61,8 @@ const HomeTwo = () => {
         Linking.openURL("https://isbc.ubf.org");
     } else if(text == "Schedule & Program") {
         navigation.navigate('ScheduleCategory')
-    } else if(text == "Profile") {
-        navigation.navigate('Profile')
+    // } else if(text == "Profile") {
+    //     navigation.navigate('Profile')
     } else if(text == "Bible Study Material") {
         navigation.navigate('Passages')
     } 
