@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000'
       },
       text: {
-        fontSize: 25,
+        fontSize: 20,
         marginBottom: 10,
         // textAlign: 'center',
       },
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         padding: 25
       },
       textTitle: {
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: 'bold',
         textDecorationLine: 'underline',
         paddingBottom: 10

@@ -27,7 +27,10 @@ import Sunday from './Screens/schedule/Sunday';
 import ScheduleCategory from './Screens/ScheduleCategory';
 import Template from './Screens/material/passages/template';
 import Passages from './Screens/Passages';
-import PDFViewer from './Screens/ProgramBook';
+import CampusMap from './Screens/CampusMap';
+import InterestGroupMap from './Screens/InterestGroupMap';
+import InterestGroupDetails from './Screens/InterestGroupDetails';
+import InterestGroupMenu from './Screens/InterestGroupMenu';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -252,13 +255,38 @@ class App extends Component {
           }}
         />
         <Stack.Screen
-          name="Program-Book"
-          component={PDFViewer}
+          name="Campus-Map"
+          component={CampusMap}
           options={{
             headerShown: false,
             animation: 'slide_from_right', // Specify the desired animation
           }}
         />
+        <Stack.Screen
+          name="IG-Map"
+          component={InterestGroupMap}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="IG-Menu"
+          component={InterestGroupMenu}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+        <Stack.Screen
+          name="IG-Details"
+          component={InterestGroupDetails}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right', // Specify the desired animation
+          }}
+        />
+      
       </Stack.Navigator>
       </NavigationContainer>
     );

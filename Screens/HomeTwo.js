@@ -21,6 +21,22 @@ const HomeTwo = () => {
     };
   }, []);
 
+  // open program book pdf in browser
+  const openPDFInBrowser = async () => {
+    const url = 'https://drive.google.com/file/d/1L45XOO87PWc2WGf7O6wudBAq5EWR_iHc/view?usp=sharing'; 
+
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        console.warn("Don't know how to open this URL:", url);
+      }
+    } catch (error) {
+      console.error('Error opening URL:', error);
+    }
+  };
+
   // Define the clickable boxes data
   const boxesData = [
     { icon: 'ios-calendar', text: 'Schedule & Program', color: '#777777' },
@@ -66,8 +82,12 @@ const HomeTwo = () => {
     } else if(text == "Bible Study Material") {
         navigation.navigate('Passages')
     } else if(text == "Program Book") {
-      navigation.navigate('Program-Book')
-  } 
+        openPDFInBrowser()
+    } else if(text == "Campus Map") {
+        navigation.navigate('Campus-Map')
+    } else if(text == "Interest Group") {
+      navigation.navigate('IG-Menu')
+    } 
     console.log(`Pressed: ${text}`);
   };
 
