@@ -15,16 +15,16 @@ const Thursday = () => {
   }, []);
 
   const boxesData = [
-    { duration: 7, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
+    { duration: 5, header: '', textTitle: 'Registration', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '4:45pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Dinner', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '6:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'yes', transition: 'no', done: 'no' },
-    { duration: 0.5, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
+    { duration: 0.75, header: '', textTitle: 'Transition', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '7:00pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'yes', done: 'no' },
     { duration: 3, header: '', textTitle: 'The Whole Earth is Full of His Glory', textDetail: "(Isaiah 6:1-8)", textDetailTwo: "David Chang (Canada)", titleLink: 'Isaiah 6:1-8', detailLink: 'Isaiah 6:1-8', detailTwoLink: 'Isaiah 6:1-8', time: '9:00pm', backgroundColor: '#fff', separation: 'no', meal: 'no', transition: 'no', done: 'no' },
     { duration: 4, header: '', textTitle: '"We Have Seen His Glory!"', textDetail: "(Life Testimonies)", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '9:30pm', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
     { duration: 1.75, header: '', textTitle: 'Group Bible Study Orientation', textDetail: "", textDetailTwo: "", titleLink: '', detailLink: '', detailTwoLink: '', time: '', backgroundColor: '#fff', separation: 'yes', meal: 'no', transition: 'no', done: 'no' },
   ]
 
   const calculateHeight = (duration) => {
-    return duration * 50;
+    return duration * 80;
   };
 
   const navigation = useNavigation();
@@ -32,12 +32,7 @@ const Thursday = () => {
   const handlePress = (link) => {
 
     const currentPassage = link
-    // navigation.navigate('Schedule')
-    
-
-    // if (link != "") {
-    //   navigation.navigate('Template', { currentPassage });
-    // }
+  
     if (link == "Isaiah 6:1-8") {
       navigation.navigate('Template', { currentPassage });
       console.log("pressed: ", link)

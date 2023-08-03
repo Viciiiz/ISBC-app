@@ -25,7 +25,7 @@ const HomeTwo = () => {
   const boxesData = [
     { icon: 'ios-calendar', text: 'Schedule & Program', color: '#777777' },
     { icon: 'ios-desktop', text: 'Website', color: '#333333' },
-    { icon: 'ios-alert', text: 'Live News', color: '#ff3f3f' },
+    { icon: 'ios-book', text: 'Program Book', color: '#ff3f3f' },
     { icon: 'ios-map', text: 'Campus Map', color: '#000000' },
     { icon: 'ios-newspaper', text: 'Bible Study Material', color: '#000000' },
     // { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
@@ -65,7 +65,9 @@ const HomeTwo = () => {
     //     navigation.navigate('Profile')
     } else if(text == "Bible Study Material") {
         navigation.navigate('Passages')
-    } 
+    } else if(text == "Program Book") {
+      navigation.navigate('Program-Book')
+  } 
     console.log(`Pressed: ${text}`);
   };
 

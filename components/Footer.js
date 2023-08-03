@@ -37,28 +37,28 @@ const Footer = () => {
             <View style={styles.socialContainer}>
                 <TouchableOpacity
                 style={styles.socialLink}
-                onPress={() => handleLinkPress('https://www.facebook.com/')}
+                onPress={() => handleLinkPress('https://www.facebook.com/universitybiblefellowship')}
                 >
                 <FontAwesome name="facebook" size={26} color="#3b5998" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
-                onPress={() => handleLinkPress('https://www.twitter.com/')}
+                onPress={() => handleLinkPress('https://twitter.com/ubfworldmission')}
                 >
                 <AntDesign name="twitter" size={26} color="#00acee" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
-                onPress={() => handleLinkPress('https://www.instagram.com/')}
+                onPress={() => handleLinkPress('https://www.instagram.com/universitybiblefellowship/')}
                 >
                 <AntDesign name="instagram" size={26} color="#e4405f" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                 style={styles.socialLink}
-                onPress={() => handleLinkPress('https://www.youtube.com/')}
+                onPress={() => handleLinkPress('https://www.youtube.com/@UBFTV')}
                 >
                 <AntDesign name="youtube" size={26} color="#e4405f" />
                 </TouchableOpacity>

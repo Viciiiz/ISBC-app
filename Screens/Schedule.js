@@ -64,7 +64,7 @@ const Schedule = () => {
 const styles = StyleSheet.create({
     container: {
         // flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#000000',
         flexGrow: 1,
         // padding: 16,
       },
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         // aspectRatio: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 0.01,
+        marginBottom: 0.001,
         borderRadius: 0,
         borderWidth: 0,
         borderColor: '#d9d9d9',
