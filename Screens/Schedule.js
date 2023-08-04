@@ -12,10 +12,10 @@ import BackButton from '../components/BackButton';
 const Schedule = () => {
 
     const boxesData = [
-        { text: 'Thursday', color: '#888888' },
-        { text: 'Friday', color: '#555555' },
-        { text: 'Saturday', color: '#333333' },
-        { text: 'Sunday', color: '#000000' },
+        { text: 'Thursday', color: '#888888', done: 'yes' },
+        { text: 'Friday', color: '#555555', done: 'no' },
+        { text: 'Saturday', color: '#333333', done: 'no' },
+        { text: 'Sunday', color: '#000000', done: 'no' },
     ]
     
     // Render the clickable boxes
@@ -24,7 +24,7 @@ const Schedule = () => {
           <View style={styles.boxesContainer}>
             {boxesData.map((box, index) => (
               <TouchableOpacity style={[styles.box, { backgroundColor: box.color }]} key={index} onPress={() => handleBoxPress(box.text)}>
-                <Text style={styles.boxText}>{box.text}</Text>
+                <Text style={box.done=='no' ? styles.boxText : styles.boxTextDone}>{box.text}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -98,6 +98,13 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         marginTop: 8,
+      },
+      boxTextDone: {
+        color: '#aaaaaa',
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginTop: 8,
+        textDecorationLine: 'line-through',
       },
       headerContainer: {
         flexDirection: 'row',
