@@ -47,6 +47,7 @@ const Template = ({ route }) => {
 
     const paragraphs = currentVar.passage.split('\n');
     const questions = currentVar.questions.split('\n');
+    const references = currentVar.references.split('\n');
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
@@ -69,6 +70,17 @@ const Template = ({ route }) => {
                 {questions.map((paragraph, index) => (
                     <Text style={styles.text} key={index}>
                     {paragraph}
+                    </Text>
+                ))}              
+            </View>
+            <View style={styles.textContainer}>
+              {
+                currentVar.references != "" ?
+                <Text style={styles.textTitleSmall}>References</Text> : console.log("no refs")
+              }
+                {references.map((paragraph, index) => (
+                    <Text style={styles.textRefs} key={index}>
+                    - {paragraph}
                     </Text>
                 ))}              
             </View>
@@ -99,12 +111,26 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         // textAlign: 'center',
       },
+      textRefs: {
+        fontSize: 20,
+        marginBottom: 10,
+        fontStyle: 'italic',
+        
+        // textAlign: 'center',
+      },
       textContainer: {
         padding: 25
       },
       textTitle: {
         fontSize: 28,
         fontWeight: 'bold',
+        textDecorationLine: 'underline',
+        paddingBottom: 10
+      },
+      textTitleSmall: {
+        fontSize: 28,
+        // fontWeight: '',
+        fontStyle: 'italic',
         textDecorationLine: 'underline',
         paddingBottom: 10
       }
