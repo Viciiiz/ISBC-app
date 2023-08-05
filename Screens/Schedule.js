@@ -13,7 +13,7 @@ const Schedule = () => {
 
     const boxesData = [
         { text: 'Thursday', color: '#888888', done: 'yes' },
-        { text: 'Friday', color: '#555555', done: 'no' },
+        { text: 'Friday', color: '#555555', done: 'yes' },
         { text: 'Saturday', color: '#333333', done: 'no' },
         { text: 'Sunday', color: '#000000', done: 'no' },
     ]
