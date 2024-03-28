@@ -39,17 +39,17 @@ const HomeTwo = () => {
 
   // Define the clickable boxes data
   const boxesData = [
-    { icon: 'ios-calendar', text: 'Schedule & Program', color: '#777777' },
-    { icon: 'ios-desktop', text: 'Website', color: '#333333' },
-    { icon: 'ios-book', text: 'Program Book', color: '#ff3f3f' },
-    { icon: 'ios-map', text: 'Campus Map', color: '#000000' },
-    { icon: 'ios-newspaper', text: 'Bible Study Material', color: '#000000' },
+    { icon: 'calendar', text: 'Schedule & Program', color: '#777777' },
+    { icon: 'desktop', text: 'Website', color: '#333333' },
+    { icon: 'book', text: 'Program Book', color: '#ff3f3f' },
+    { icon: 'map', text: 'Campus Map', color: '#000000' },
+    { icon: 'newspaper', text: 'Bible Study Material', color: '#000000' },
     // { icon: 'ios-calendar', text: 'Schedule', color: '#777777' },
-    { icon: 'ios-people', text: 'Interest Group', color: '#777777' },
-    { icon: 'ios-list', text: 'Poll', color: '#333333' },
-    { icon: 'ios-information', text: 'Help', color: '#000000' },
-    { icon: 'ios-chatbox', text: 'Requests & Feedback', color: '#777777' },
-    { icon: 'ios-person', text: 'Profile', color: '#333333' },
+    { icon: 'people', text: 'Interest Group', color: '#777777' },
+    { icon: 'list', text: 'Poll', color: '#333333' },
+    { icon: 'information', text: 'Help', color: '#000000' },
+    { icon: 'chatbox', text: 'Requests & Feedback', color: '#777777' },
+    { icon: 'person', text: 'Profile', color: '#333333' },
     // { icon: 'ios-alert', text: 'Live News', color: '#333333' },
     
     // Add more boxes here as needed

@@ -90,7 +90,7 @@ const Tab = createBottomTabNavigator();
 //                 options={{ tabBarIcon: ({ focused }) => {
 //                     return (
 //                       <View style={styles.tabIconContainer}>
-//                         <Ionicons name={'ios-home'}  size={30} color="#ffffff" />
+//                         <Ionicons name={'home'}  size={30} color="#ffffff" />
 //                       </View>
 //                     );
 //                 },}}
@@ -99,7 +99,7 @@ const Tab = createBottomTabNavigator();
 //                 options={{ tabBarIcon: ({ focused }) => {
 //                     return (
 //                       <View>
-//                         <Ionicons name={'ios-book'} size={30} color="#ffffff" />
+//                         <Ionicons name={'book'} size={30} color="#ffffff" />
 //                       </View>
 //                     );
 //                 },}}
@@ -108,7 +108,7 @@ const Tab = createBottomTabNavigator();
 //                 options={{ tabBarIcon: ({ focused }) => {
 //                     return (
 //                       <View>
-//                         <Ionicons name={'ios-add'} size={32} color="#ffffff" />
+//                         <Ionicons name={'add'} size={32} color="#ffffff" />
 //                       </View>
 //                     );
 //                 },}}
@@ -118,7 +118,7 @@ const Tab = createBottomTabNavigator();
 //                   tabBarIcon: ({ focused }) => {
 //                     return (
 //                       <View>
-//                         <Ionicons name={'ios-search'} size={30} color="#ffffff" />
+//                         <Ionicons name={'search'} size={30} color="#ffffff" />
 //                       </View>
 //                     );
 //                 },}}

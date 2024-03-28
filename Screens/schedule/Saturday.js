@@ -107,7 +107,7 @@ const Saturday = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.backButton} onPress={handleBackButtonPress}>
-          <Ionicons style={styles.backButtonIcon} name='ios-arrow-back-circle-outline' size={20} color="#ffffff" />
+          <Ionicons style={styles.backButtonIcon} name='arrow-back-circle-outline' size={20} color="#ffffff" />
           <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Saturday</Text>
